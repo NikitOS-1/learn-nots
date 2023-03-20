@@ -1,4 +1,10 @@
+import Form from "../components/Form";
+
 const AuthorizePage = () => {
-  return <div>AuthorizePage</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 };
 export default AuthorizePage;
