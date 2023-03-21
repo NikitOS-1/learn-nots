@@ -1,32 +1,28 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
-const Form = () => {
-  const [userName, setUserName] = useState(
-    useSelector((state) => state.user.email)
-  );
+const Form = ({ title, handleClick }) => {
   const [userEmail, setUserEmail] = useState("");
+  const [userPass, setUserPass] = useState("");
 
-  console.log(userName);
   return (
     <div>
-      <form>
-        <input
-          type="text"
-          placeholder="your name"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="your email"
-          value={userEmail}
-          onChange={(e) => setUserEmail(e.target.value)}
-        />
-        <br />
-        <button>Login</button>
-      </form>
+      <h1>{title}</h1>
+      <input
+        type="email"
+        placeholder="Your Email"
+        value={userEmail}
+        onChange={(e) => setUserEmail(e.target.value)}
+      />
+      <br />
+      <input
+        type="password"
+        placeholder="Your Password"
+        value={userPass}
+        onChange={(e) => setUserPass(e.target.value)}
+      />
+      <br />
+      <button onClick={handleClick}>Login</button>
+      <br />
     </div>
   );
 };
