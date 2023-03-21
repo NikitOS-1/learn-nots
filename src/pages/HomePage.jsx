@@ -2,20 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const [isLogIn, setIsLogIn] = useState(true);
-
   const navigate = useNavigate();
-  const logOut = () => setIsLogIn(false);
-
-  useEffect(() => {
-    isLogIn ? navigate("/") : navigate("/login");
-  }, [isLogIn]);
-
+  useEffect(() => navigate("/login"));
   return (
     <div>
       <p> Welcome !!! </p>
       <p> Home page</p>
-      <button onClick={logOut}>Log Out</button>
+      <button>Log Out</button>
     </div>
   );
 };

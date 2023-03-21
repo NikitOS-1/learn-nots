@@ -5,13 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const AuthorizePage = () => {
   const handleLogin = (email, pass) => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, pass)
-      .then((state) => {
-        console.log(state);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log(auth);
   };
 
   return (
