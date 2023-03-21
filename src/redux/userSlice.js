@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  email: "nnnn",
+  email: "nnnn@foo.ls",
   id: "1",
-  tokken: "2",
+  tokken: "1a",
 };
 
 const userSlice = createSlice({
@@ -18,4 +18,5 @@ const userSlice = createSlice({
   },
 });
 
+export const { getStatus } = userSlice.actions;
 export default userSlice;

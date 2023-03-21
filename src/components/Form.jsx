@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Form = () => {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(
+    useSelector((state) => state.user.email)
+  );
   const [userEmail, setUserEmail] = useState("");
+
+  console.log(userName);
   return (
     <div>
-      <form action="">
+      <form>
         <input
           type="text"
           placeholder="your name"
