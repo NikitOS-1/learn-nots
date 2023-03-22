@@ -14,9 +14,7 @@ const HomePage = () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user.uid === id) {
-      console.log("Logined");
     } else {
-      console.log("exit");
       navigate("/login");
     }
   });
