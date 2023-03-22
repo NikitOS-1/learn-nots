@@ -1,14 +1,33 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "../redux/userSlice";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { email, id, tokken } = useSelector((state) => state.user);
+
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user.uid === id) {
+      console.log("Logined");
+    } else {
+      console.log("exit");
+      navigate("/login");
+    }
+  });
 
   return (
     <div>
       <p> Welcome !!! </p>
       <p> Home page</p>
-      <button>Log Out</button>
+      <button onClick={() => dispatch(removeUser())}>
+        Log Out with {email}
+      </button>
     </div>
   );
 };

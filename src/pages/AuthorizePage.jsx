@@ -6,6 +6,7 @@ import { addUser } from "../redux/userSlice";
 
 const AuthorizePage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = (email, pass) => {
     const auth = getAuth();
@@ -19,9 +20,8 @@ const AuthorizePage = () => {
             tokken: user.refreshToken,
           })
         );
-        console.log("welcome");
+        navigate("/");
       })
-
       .catch(console.error);
   };
 
