@@ -21,7 +21,7 @@ const Form = ({ title, handleClick }) => {
         onChange={(e) => setUserPass(e.target.value)}
       />
       <br />
-      <button onClick={handleClick(userEmail, userPass)}>Login</button>
+      <button onClick={() => handleClick(userEmail, userPass)}>Login</button>
       <br />
     </div>
   );
