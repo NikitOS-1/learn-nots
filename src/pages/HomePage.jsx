@@ -11,13 +11,15 @@ const HomePage = () => {
   const { email, id, tokken } = useSelector((state) => state.user);
 
   const auth = getAuth();
-
   onAuthStateChanged(auth, (user) => {
-    if (user.uid === id) {
-    } else {
-      navigate("/login");
-    }
+    console.log(user);
   });
+
+  let isLogin = localStorage.getItem("isLogin");
+
+  useEffect(() => {
+    isLogin ? navigate("/") : navigate("/login");
+  }, [isLogin]);
 
   return (
     <div>
