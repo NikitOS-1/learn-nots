@@ -19,7 +19,7 @@ const RegisterPage = () => {
             tokken: user.refreshToken,
           })
         );
-        navigate("/");
+        navigate("/login");
       })
 
       .catch(console.error);
@@ -27,7 +27,7 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Form title="Register" handleClick={handleRegist} />
+      <Form title="Register" handleClick={handleRegist} send={"Register"} />
       <Link to={"/login"}>If you have account Login</Link>
     </div>
   );

@@ -32,7 +32,7 @@ const AuthorizePage = () => {
 
   return (
     <div>
-      <Form title="Login" handleClick={handleLogin} />
+      <Form title="Login" handleClick={handleLogin} send={"Login"} />
       <Link to={"/register"}>Create account</Link>
     </div>
   );

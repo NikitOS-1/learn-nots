@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ title, handleClick }) => {
+const Form = ({ title, handleClick, send }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPass, setUserPass] = useState("");
 
@@ -21,7 +21,7 @@ const Form = ({ title, handleClick }) => {
         onChange={(e) => setUserPass(e.target.value)}
       />
       <br />
-      <button onClick={() => handleClick(userEmail, userPass)}>Login</button>
+      <button onClick={() => handleClick(userEmail, userPass)}>{send}</button>
       <br />
     </div>
   );
