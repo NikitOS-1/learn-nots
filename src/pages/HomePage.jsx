@@ -12,14 +12,15 @@ const HomePage = () => {
 
   const auth = getAuth();
 
-  // useEffect(() => {
-  //   isLogin ? navigate("/") : navigate("/login");
-  // }, [isLogin]);
+  useEffect(() => {
+    isLogin ? navigate("/") : navigate("/login");
+  }, [isLogin]);
 
   return (
     <div>
       <p> Welcome !!! </p>
       <p> Home page</p>
+
       <button onClick={() => dispatch(removeUser())}>
         Log Out with {email}
       </button>
