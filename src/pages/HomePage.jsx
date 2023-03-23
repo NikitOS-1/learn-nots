@@ -7,19 +7,14 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const { email, id, tokken } = useSelector((state) => state.user);
-
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    console.log(user);
-  });
-
   let isLogin = localStorage.getItem("isLogin");
 
-  useEffect(() => {
-    isLogin ? navigate("/") : navigate("/login");
-  }, [isLogin]);
+  const auth = getAuth();
+
+  // useEffect(() => {
+  //   isLogin ? navigate("/") : navigate("/login");
+  // }, [isLogin]);
 
   return (
     <div>
