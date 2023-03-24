@@ -1,6 +1,7 @@
 import { Password } from "@mui/icons-material";
 import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
+import "./Form.style.scss";
 
 const Form = ({ title, handleClick, send }) => {
   const [userEmail, setUserEmail] = useState("");
@@ -9,7 +10,6 @@ const Form = ({ title, handleClick, send }) => {
   let validEmail = userEmail === "" || null || undefined ? true : false;
   return (
     <div className="wraper">
-      npm i node-sass
       <h1>{title}</h1>
       <TextField
         className="email"
