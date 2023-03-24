@@ -24,6 +24,8 @@ const HomePage = () => {
       <button onClick={() => dispatch(removeUser())}>
         Log Out with {email}
       </button>
+      <Link to={"/comp1"}>to comp1</Link>
+      <Link to={"/comp2"}>to comp2</Link>
     </div>
   );
 };

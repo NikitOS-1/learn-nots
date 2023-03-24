@@ -3,7 +3,8 @@ import { RequireAuth } from "./Auth/RequireAuth";
 import AuthorizePage from "./pages/AuthorizePage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
-
+import Comp1 from "./pages/Comp1";
+import Comp2 from "./pages/Comp2";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,8 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/comp1" element={<Comp1 />} />
+        <Route path="/comp2" element={<Comp2 />} />
         <Route path="/login" element={<AuthorizePage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
