@@ -1,4 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const fetchUserData = createAsyncThunk(
+  "user/fetchUserData",
+
+  onAuthStateChanged(auth, (user) => {
+    console.log(user);
+  })
+);
 
 const initialState = {
   email: null,
@@ -23,6 +33,7 @@ const userSlice = createSlice({
       localStorage.clear();
     },
   },
+  extraReducers: (builder) => {},
 });
 
 export const { addUser, removeUser } = userSlice.actions;
