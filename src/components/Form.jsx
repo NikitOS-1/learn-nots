@@ -1,28 +1,41 @@
+import { Password } from "@mui/icons-material";
+import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 
 const Form = ({ title, handleClick, send }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPass, setUserPass] = useState("");
-
+  let validPass = userPass === "" || null || undefined ? true : false;
+  let validEmail = userEmail === "" || null || undefined ? true : false;
   return (
-    <div>
+    <div className="wraper">
+      npm i node-sass
       <h1>{title}</h1>
-      <input
-        type="email"
-        placeholder="Your Email"
+      <TextField
+        className="email"
+        error={validEmail}
+        id="outlined-basic"
+        label="Login"
+        variant="outlined"
         value={userEmail}
         onChange={(e) => setUserEmail(e.target.value)}
       />
-      <br />
-      <input
+      <TextField
+        className="pass"
+        error={validPass}
+        id="standard-password"
+        label="Password"
+        variant="outlined"
         type="password"
-        placeholder="Your Password"
         value={userPass}
         onChange={(e) => setUserPass(e.target.value)}
       />
-      <br />
-      <button onClick={() => handleClick(userEmail, userPass)}>{send}</button>
-      <br />
+      <Button
+        className="btn"
+        onClick={() => handleClick(userEmail, userPass)}
+        variant="outlined">
+        {send}
+      </Button>
     </div>
   );
 };
