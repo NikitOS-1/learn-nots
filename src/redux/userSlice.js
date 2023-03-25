@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   email: null,
