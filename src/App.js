@@ -5,7 +5,15 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import Comp1 from "./pages/Comp1";
 import Comp2 from "./pages/Comp2";
+import { fetchUserData } from "./redux/userDataSlice";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUserData);
+  }, [dispatch]);
   return (
     <div className="App">
       <Routes>
