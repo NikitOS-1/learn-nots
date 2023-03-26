@@ -11,9 +11,7 @@ import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUserData);
-  }, [dispatch]);
+
   return (
     <div className="App">
       <Routes>
@@ -25,7 +23,14 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route path="/comp1" element={<Comp1 />} />
+        <Route
+          path="/comp1"
+          element={
+            <RequireAuth>
+              <Comp1 />
+            </RequireAuth>
+          }
+        />
         <Route path="/comp2" element={<Comp2 />} />
         <Route path="/login" element={<AuthorizePage />} />
         <Route path="/register" element={<RegisterPage />} />

@@ -5,7 +5,7 @@ export const fetchUserData = createAsyncThunk(
 
   async function () {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = response.json();
+    const data = await response.json();
     return data;
   }
 );
@@ -20,17 +20,17 @@ const userData = createSlice({
   name: "data",
   initialState,
   reducers: {},
-  extraReducers:(bulder)=> {
+  extraReducers: {
     [fetchUserData.pending]: (state) => {
       state.status = "loading";
       state.error = null;
     },
     [fetchUserData.fulfilled]: (state, action) => {
-      state.state = "resolved";
-      state.data = action;
+      state.status = "resolved";
+      state.data = action.payload;
     },
     [fetchUserData.rejected]: (state, action) => {},
-  }
+  },
 });
 
 export default userData;
