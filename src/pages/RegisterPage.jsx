@@ -1,24 +1,14 @@
-import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { addUser } from "../redux/userSlice";
 
 const RegisterPage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRegist = (email, pass) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, pass)
-      .then(({ user }) => {
-        dispatch(
-          addUser({
-            email: user.email,
-            id: user.uid,
-            tokken: user.refreshToken,
-          })
-        );
+      .then(() => {
         navigate("/login");
       })
 
