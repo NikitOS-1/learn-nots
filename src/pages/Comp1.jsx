@@ -4,7 +4,6 @@ import { fetchUserData } from "../redux/userDataSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Comp1 = () => {
-  const { email, id, tokken } = useSelector((state) => state.user);
   const { status, error, data } = useSelector((state) => state.userData);
 
   const dispatch = useDispatch();
@@ -23,7 +22,7 @@ const Comp1 = () => {
 
   return (
     <div>
-      Comp1 + email:{email}
+      Comp1 + email:{"email"}
       <br />
       {status}
       <br />

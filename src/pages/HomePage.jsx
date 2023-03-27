@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { removeUser } from "../redux/userSlice";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -13,7 +10,7 @@ const HomePage = () => {
       <p> Welcome !!! </p>
       <p> Home page</p>
 
-      <button>Log Out with {email}</button>
+      <button>Log Out with {"email"}</button>
       <Link to={"/comp1"}>to comp1</Link>
       <br />
       <Link to={"/comp2"}>to comp2</Link>
