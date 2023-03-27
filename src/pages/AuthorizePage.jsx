@@ -8,11 +8,6 @@ import { useEffect } from "react";
 const AuthorizePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  let isLogin = localStorage.getItem("isLogin");
-
-  useEffect(() => {
-    isLogin ? navigate("/") : navigate("/login");
-  }, [isLogin]);
 
   const handleLogin = (email, pass) => {
     const auth = getAuth();
