@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { addUser } from "../redux/userSlice";
 import { useEffect } from "react";
 
 const AuthorizePage = () => {
@@ -12,14 +11,7 @@ const AuthorizePage = () => {
   const handleLogin = (email, pass) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, pass)
-      .then(({ user }) => {
-        dispatch(
-          addUser({
-            email: user.email,
-            id: user.uid,
-            tokken: user.refreshToken,
-          })
-        );
+      .then(() => {
         navigate("/");
       })
       .catch(console.error);
