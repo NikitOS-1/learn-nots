@@ -19,11 +19,7 @@ const initialState = {
 const userData = createSlice({
   name: "data",
   initialState,
-  reducers: {
-    addData: (state, action) => {
-      state.data = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: {
     [fetchUserData.pending]: (state) => {
       state.status = "loading";
@@ -38,5 +34,5 @@ const userData = createSlice({
     },
   },
 });
-export const { addData } = userData;
+
 export default userData;
