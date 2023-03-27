@@ -8,13 +8,6 @@ const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { email, id, tokken } = useSelector((state) => state.user);
-  let isLogin = localStorage.getItem("isLogin");
-
-  const auth = getAuth();
-
-  useEffect(() => {
-    isLogin ? navigate("/") : navigate("/login");
-  }, [isLogin]);
 
   return (
     <div>
