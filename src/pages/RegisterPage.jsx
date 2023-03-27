@@ -11,7 +11,6 @@ const RegisterPage = () => {
       .then(() => {
         navigate("/login");
       })
-
       .catch(console.error);
   };
 
