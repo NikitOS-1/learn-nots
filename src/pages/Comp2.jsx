@@ -4,25 +4,24 @@ import { fetchUserData } from "../redux/userDataSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Comp2 = () => {
+  const dispatch = useDispatch();
   const { status, error, data } = useSelector((state) => state.userData);
 
-  const dispatch = useDispatch();
-
   const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("auth ON");
-    } else {
-      console.log("auth OFF");
-    }
-  });
+  const user = auth.currentUser;
+
+  if (!user) {
+    console.log("exit");
+  } else {
+    console.log(user);
+  }
   useEffect(() => {
     dispatch(fetchUserData());
   }, [dispatch]);
-
   return (
     <div>
-      Comp2 + email:{"email"} <br /> id:{data.map((user) => user.id)}
+      {status} <br />
+      {!data ? "Loading..." : data.map((state) => state.id)}
     </div>
   );
 };

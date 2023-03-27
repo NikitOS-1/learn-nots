@@ -29,7 +29,9 @@ const userData = createSlice({
       state.status = "resolved";
       state.data = action.payload;
     },
-    [fetchUserData.rejected]: (state, action) => {},
+    [fetchUserData.rejected]: (state, action) => {
+      state.status = "error";
+    },
   },
 });
 
