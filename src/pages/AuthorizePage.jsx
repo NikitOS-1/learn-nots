@@ -1,12 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const AuthorizePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((response) => response.json())
+    .then((data) => dispatch());
 
   const handleLogin = (email, pass) => {
     const auth = getAuth();
