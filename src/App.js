@@ -6,14 +6,22 @@ import RegisterPage from "./pages/RegisterPage";
 import Comp1 from "./pages/Comp1";
 import Comp2 from "./pages/Comp2";
 import { fetchUserData } from "./redux/userDataSlice";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { Switch } from "@mui/material";
+import "./App.style.scss";
+import { isDay } from "./redux/dayOrNightSlice";
 function App() {
   const dispatch = useDispatch();
+  const checked = useSelector((state) => state.theme.theme);
+
+  const handleChange = () => {
+    checked ? dispatch(isDay(false)) : dispatch(isDay(true));
+  };
 
   return (
-    <div className="App">
+    <div className={checked ? "day" : "night"}>
+      <Switch checked={checked} onChange={handleChange} />
       <Routes>
         <Route
           path="/"
