@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserData } from "../redux/userDataSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { LinearProgress } from "@mui/material";
 
 const Comp1 = () => {
   const { status, error, data } = useSelector((state) => state.userData);
@@ -28,7 +29,7 @@ const Comp1 = () => {
       <br />
       {error}
       <br />
-      {!data ? "Loading..." : data.map((state) => state.name)}
+      {!data ? <LinearProgress /> : data.map((state) => state.name)}
     </div>
   );
 };

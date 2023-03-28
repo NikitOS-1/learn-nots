@@ -4,7 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { addData, fetchFile } from "../redux/fileSlice";
 import { useEffect } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, LinearProgress } from "@mui/material";
 
 const AuthorizePage = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const AuthorizePage = () => {
 
   return (
     <div>
-      <div>{!uData ? <CircularProgress /> : uData.map((i) => i.title)}</div>
+      <div>{!uData ? <LinearProgress /> : uData.map((i) => i.title)}</div>
       <Form title="Login" handleClick={handleLogin} send={"Login"} />
       <Link to={"/register"}>Create account</Link>
     </div>
