@@ -18,6 +18,7 @@ const AuthorizePage = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, pass)
       .then(() => {
+        dispatch();
         navigate("/");
       })
       .catch(console.error);
