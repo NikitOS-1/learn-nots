@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className={checked ? "day" : "night"}>
+    <div className={!checked ? "day" : "night"}>
       <Switch checked={checked} onChange={handleChange} />
       <Routes>
         <Route
