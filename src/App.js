@@ -16,7 +16,18 @@ function App() {
   const handleChange = () => {
     checked ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
-
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let noArr = [];
+  let yesArr = [];
+  arr.forEach((i) => {
+    if (i % 2) {
+      noArr.push(i);
+    } else {
+      yesArr.push(i);
+    }
+  });
+  console.log(noArr);
+  console.log(yesArr);
   return (
     <div className={!checked ? "day" : "night"}>
       <Switch checked={checked} onChange={handleChange} />
