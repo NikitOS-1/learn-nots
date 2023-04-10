@@ -16,11 +16,22 @@ function App() {
   const handleChange = () => {
     checked ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
-
+  const users = [
+    { name: "Alex", age: 30 },
+    { name: "Nik", age: 19 },
+    { name: "Archi", age: 20 },
+  ];
+  let newUser = [];
+  users.map((i) => {
+    if (i.age > 18) {
+      newUser.push(i);
+    }
+  });
+  console.log(newUser);
   return (
     <div className={!checked ? "day" : "night"}>
       <Switch checked={checked} onChange={handleChange} />
-      <Routes>
+      {/* <Routes>
         <Route
           path="/"
           element={
@@ -40,7 +51,7 @@ function App() {
         <Route path="/comp2" element={<Comp2 />} />
         <Route path="/login" element={<AuthorizePage />} />
         <Route path="/register" element={<RegisterPage />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
