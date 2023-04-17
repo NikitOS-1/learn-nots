@@ -7,8 +7,7 @@ const Algorithms = () => {
   const [numArr, setNumArr] = useState([
     1, 6, 4, 3, 5, 2, 7, 8, 9, 67, 23, 43, 5678, 12999331, 877, 654, 233, 12,
   ]);
-  function sort() {
-    let arr = numArr;
+  function sort(arr) {
     for (let i = 0; i < arr.length; i++) {
       for (let x = 0; x < arr.length; x++) {
         if (arr[x + 1] < arr[x]) {
@@ -18,9 +17,9 @@ const Algorithms = () => {
         }
       }
     }
-    return setNumArr((prev) => (prev = arr));
+    return setNumArr(arr);
   }
-  console.log(numArr);
+
   return (
     <div>
       <div>
@@ -64,7 +63,7 @@ const Algorithms = () => {
         {numArr.map((i, x) => (
           <div key={x}>{i}</div>
         ))}
-        <button onClick={() => sort()}>Sort</button>
+        <button onClick={() => sort(numArr)}>Sort</button>
       </div>
     </div>
   );
