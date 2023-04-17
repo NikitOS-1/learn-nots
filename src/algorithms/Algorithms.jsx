@@ -3,31 +3,6 @@ const Algorithms = () => {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 67, 23, 43, 5678, 121, 877, 654, 233, 12,
   ];
 
-  //   function binarySearch(arr, item) {
-  //     let low = 0;
-  //     let high = arr.length - 1;
-  //     while (low <= high) {
-  //       let mid = Number((low + high) / 2);
-  //       let guess = arr[mid];
-  //       if (guess === item) {
-  //         return console.log(mid);
-  //       } else if (guess > item) {
-  //         high = mid - 1;
-  //       } else {
-  //         low = mid + 1;
-  //       }
-  //       return null;
-  //     }
-  //   }
-  function search(arr, item) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] == item) {
-        return console.log(`found item : ${arr[i]} // index:${i}`);
-      }
-    }
-    return console.log("Not found");
-  }
-  search(names, 877);
   return (
     <div>
       <div>
@@ -53,6 +28,15 @@ const Algorithms = () => {
           элемента. • Массивы обеспечивают быстрое чтение. • Списки обеспечивают
           быструю вставку и выполнение. • Все элементы массива должны быть
           однотипными (только целые числа, только вещественные числа и т.д.).
+        </p>
+      </div>
+      <div>
+        <p>
+          Рекурсия • Когда функция вызывает саму себя, это называется рекурсией.
+          • В каждой рекурсивной функции должно быть два случая: базовый и
+          рекурсивный. • Стек поддерживает две операции: занесение и извлечение
+          элементов. • Все вызовы функций сохраняются в стеке вызовов. • Если
+          стек вызовов станет очень большим, он займет слишком много памяти.
         </p>
       </div>
     </div>
