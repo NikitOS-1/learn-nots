@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { RequireAuth } from "./Auth/RequireAuth";
+import { RequireAuth } from "./components/PrivatePages/RequireAuth";
 import AuthorizePage from "./pages/AuthorizePage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
