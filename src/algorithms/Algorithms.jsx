@@ -1,18 +1,26 @@
-const Algorithms = () => {
-  let names = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 67, 23, 43, 5678, 129991, 877, 654, 233, 12,
-  ];
+import { useEffect, useState } from "react";
 
-  function maxNum(arr) {
-    let num = 0;
+const Algorithms = () => {
+  // let number = [
+  //   1, 6, 4, 3, 5, 2, 7, 8, 9, 67, 23, 43, 5678, 12999331, 877, 654, 233, 12,
+  // ];
+  const [numArr, setNumArr] = useState([
+    1, 6, 4, 3, 5, 2, 7, 8, 9, 67, 23, 43, 5678, 12999331, 877, 654, 233, 12,
+  ]);
+  function sort() {
+    let arr = numArr;
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > num) {
-        num = arr[i];
+      for (let x = 0; x < arr.length; x++) {
+        if (arr[x + 1] < arr[x]) {
+          let minNum = arr[x + 1];
+          arr[x + 1] = arr[x];
+          arr[x] = minNum;
+        }
       }
     }
-    return console.log(num);
+    return setNumArr((prev) => (prev = arr));
   }
-  maxNum(names);
+  console.log(numArr);
   return (
     <div>
       <div>
@@ -51,6 +59,12 @@ const Algorithms = () => {
       </div>
       <div>
         <p>Быстрая сортировка</p>
+      </div>
+      <div>
+        {numArr.map((i, x) => (
+          <div key={x}>{i}</div>
+        ))}
+        <button onClick={() => sort()}>Sort</button>
       </div>
     </div>
   );
