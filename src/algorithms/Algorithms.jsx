@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Foo from "./Foo";
 
 const Algorithms = () => {
   // let number = [
@@ -21,8 +20,6 @@ const Algorithms = () => {
   //   }
   //   return arr;
   // }
-
-  const [word, setWord] = useState("hi");
   return (
     <div>
       <div>
@@ -69,7 +66,6 @@ const Algorithms = () => {
         <button onClick={() => setWord((prev) => (prev = "words"))}>
           Sort
         </button>
-        <Foo title="d" />
       </div>
     </div>
   );
