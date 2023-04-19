@@ -1,10 +1,6 @@
 import Algorithms from "../algorithms/Algorithms";
 
 const HomePage = () => {
-  return (
-    <div>
-      <Algorithms />
-    </div>
-  );
+  return <div></div>;
 };
 export default HomePage;
