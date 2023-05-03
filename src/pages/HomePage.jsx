@@ -1,9 +1,9 @@
+import { getDatabase } from "firebase/database";
 import React, { Suspense } from "react";
-// import Algorithms from "../algorithms/Algorithms";
-
-const Algorithms = React.lazy(() => import("../algorithms/Algorithms"));
 
 const HomePage = () => {
+  const database = getDatabase();
+  console.log(database);
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}></Suspense>
