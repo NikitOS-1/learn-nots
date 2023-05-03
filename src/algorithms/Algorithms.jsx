@@ -25,7 +25,7 @@ const Algorithms = () => {
   //   }
   //   return arr;
   // }
-start db 
+
   return (
     <div>
       <div>
