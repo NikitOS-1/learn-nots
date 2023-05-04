@@ -5,8 +5,6 @@ import dayOrNightSlice from "./dayOrNightSlice";
 
 export const store = configureStore({
   reducer: {
-    file: fileSlice.reducer,
-    userData: userDataSlice.reducer,
     theme: dayOrNightSlice.reducer,
   },
 });
