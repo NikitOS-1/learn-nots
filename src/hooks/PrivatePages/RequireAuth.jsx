@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 
-const RequireAuth = ({ children }) => {
+export const RequireAuth = ({ children }) => {
   const location = useLocation();
   const auth = getAuth();
   const user = auth.currentUser;
@@ -12,4 +12,3 @@ const RequireAuth = ({ children }) => {
     return children;
   }
 };
-export { RequireAuth };

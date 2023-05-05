@@ -3,7 +3,7 @@ import { useState } from "react";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
+  const submit = () => {};
   return (
     <form typeof="submit">
       <input
@@ -16,7 +16,7 @@ const SignIn = () => {
         value={pass}
         onChange={(e) => setPass((prev) => (prev = e.target.value))}
       />
-      <button>SignIn</button>
+      <button onClick={submit}>SignIn</button>
     </form>
   );
 };
