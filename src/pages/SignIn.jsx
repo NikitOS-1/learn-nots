@@ -12,7 +12,7 @@ const SignIn = () => {
         onChange={(e) => setEmail((prev) => (prev = e.target.value))}
       />
       <input
-        type="text"
+        type="password"
         value={pass}
         onChange={(e) => setPass((prev) => (prev = e.target.value))}
       />
