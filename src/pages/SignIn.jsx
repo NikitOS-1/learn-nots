@@ -20,7 +20,6 @@ const SignIn = () => {
       />{" "}
       <br />
       <button onClick={submit}>SignIn</button>
-      <li></li>
     </form>
   );
 };
