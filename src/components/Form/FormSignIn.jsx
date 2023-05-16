@@ -3,7 +3,9 @@ import { useState } from "react";
 const FormSignIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const submit = () => {};
+  const submit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <form typeof="submit">

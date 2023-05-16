@@ -7,7 +7,9 @@ const FormSignUp = () => {
   const [pass, setPass] = useState("");
   const [name, setName] = useState("");
 
-  const submit = () => {};
+  const submit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <form typeof="submit">
