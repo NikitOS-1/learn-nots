@@ -1,10 +1,24 @@
 import { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const FormSignIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const auth = getAuth();
+
   const submit = (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   return (
