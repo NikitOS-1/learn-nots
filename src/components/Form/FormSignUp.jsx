@@ -6,16 +6,9 @@ const FormSignUp = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [name, setName] = useState("");
-  const navigate = useNavigate();
-  const auth = getAuth();
+
   const submit = () => {};
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      }
-    });
-  });
+
   return (
     <form typeof="submit">
       <h1>SignUp</h1>
