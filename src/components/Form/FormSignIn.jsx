@@ -29,35 +29,25 @@ const FormSignIn = () => {
         setError(errorMessage);
       });
   };
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      } else {
-        return (
-          <form typeof="submit">
-            <h1>SignIn</h1>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail((prev) => (prev = e.target.value))}
-            />{" "}
-            <br />
-            <input
-              type="password"
-              value={pass}
-              onChange={(e) => setPass((prev) => (prev = e.target.value))}
-            />{" "}
-            <br />
-            {error}
-            <br />
-            <button onClick={submit}>SignIn</button>
-          </form>
-        );
-      }
-    });
-  });
+  return (
+    <form typeof="submit">
+      <h1>SignIn</h1>
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail((prev) => (prev = e.target.value))}
+      />{" "}
+      <br />
+      <input
+        type="password"
+        value={pass}
+        onChange={(e) => setPass((prev) => (prev = e.target.value))}
+      />{" "}
+      <br />
+      {error}
+      <br />
+      <button onClick={submit}>SignIn</button>
+    </form>
+  );
 };
-
 export default FormSignIn;
