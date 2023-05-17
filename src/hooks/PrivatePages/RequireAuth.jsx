@@ -6,7 +6,7 @@ export const RequireAuth = ({ children }) => {
   const auth = getAuth();
   const user = auth.currentUser;
   if (!user) {
-    return <Navigate to={"/login"} state={{ from: location }} />;
+    return <Navigate to={"/sign-in"} state={{ from: location }} />;
   } else {
     return children;
   }

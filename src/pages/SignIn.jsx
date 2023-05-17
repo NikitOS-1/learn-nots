@@ -7,6 +7,7 @@ import { CircularProgress } from "@mui/material";
 const SignIn = () => {
   const navigate = useNavigate();
   const auth = getAuth();
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -14,13 +15,7 @@ const SignIn = () => {
       }
     });
   });
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        <FormSignIn />;
-      }
-    });
-  });
+
   return <FormSignIn />;
 };
 export default SignIn;
