@@ -12,8 +12,7 @@ const FormSignIn = () => {
   const [error, setError] = useState("");
 
   const auth = getAuth();
-
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const submit = (e) => {
     e.preventDefault();

@@ -10,10 +10,13 @@ const SignUp = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         navigate("/");
-      } else {
-        return <FormSignUp />;
       }
     });
   });
+  return (
+    <div>
+      <FormSignUp />
+    </div>
+  );
 };
 export default SignUp;
