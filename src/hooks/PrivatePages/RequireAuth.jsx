@@ -9,5 +9,6 @@ export const RequireAuth = ({ children }) => {
     return <Navigate to={"/sign-in"} state={{ from: location }} />;
   } else {
     return children;
+    return children;
   }
 };
