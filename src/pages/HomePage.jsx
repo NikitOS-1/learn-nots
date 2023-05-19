@@ -1,4 +1,4 @@
-import { getDatabase, ref, set } from "firebase/database";
+import { child, get, getDatabase, ref, set } from "firebase/database";
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
@@ -20,18 +20,21 @@ const HomePage = () => {
       profile_picture: imageUrl,
     });
   }
-
-  return onValue(
-    ref(db, "/users/" + userId),
-    (snapshot) => {
-      const username =
-        (snapshot.val() && snapshot.val().username) || "Anonymous";
-      // ...
-    },
-    {
-      onlyOnce: true,
-    }
-  );
+  // const [data, setData] = useState("");
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, `users/${userId}`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        // console.log(snapshot.val());
+        // setData(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  // console.log(data);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
