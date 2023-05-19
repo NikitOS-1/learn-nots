@@ -7,6 +7,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const db = getDatabase();
+  const dbRef = ref(db);
   const userId = auth.currentUser.uid;
 
   const [name, setName] = useState("");
@@ -20,13 +21,11 @@ const HomePage = () => {
       profile_picture: imageUrl,
     });
   }
-  // const [data, setData] = useState("");
-  const dbRef = ref(getDatabase());
+
   get(child(dbRef, `users/${userId}`))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        // console.log(snapshot.val());
-        // setData(snapshot.val());
+        console.log(snapshot.val());
       } else {
         console.log("No data available");
       }
@@ -34,7 +33,6 @@ const HomePage = () => {
     .catch((error) => {
       console.error(error);
     });
-  // console.log(data);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
