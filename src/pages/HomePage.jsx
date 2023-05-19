@@ -4,8 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const auth = getAuth();
+  const db = getDatabase();
+  const userId = auth.currentUser.uid;
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [imageUrl, setImageUrl] = useState("icon.jpg");
+
   function writeUserData(userId, name, email, imageUrl) {
-    const db = getDatabase();
     set(ref(db, "users/" + userId), {
       username: name,
       email: email,
@@ -13,8 +21,17 @@ const HomePage = () => {
     });
   }
 
-  const navigate = useNavigate();
-  const auth = getAuth();
+  return onValue(
+    ref(db, "/users/" + userId),
+    (snapshot) => {
+      const username =
+        (snapshot.val() && snapshot.val().username) || "Anonymous";
+      // ...
+    },
+    {
+      onlyOnce: true,
+    }
+  );
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -32,22 +49,26 @@ const HomePage = () => {
         // An error happened.
       });
   };
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [imageUrl, setImageUrl] = useState("icon.jpg");
+
   return (
     <div>
       Home
       <input
         type="text"
         value={name}
-        onChange={(e) => setName((prev) => (prev = e))}
+        onChange={(e) => setName((prev) => (prev = e.target.value))}
+        placeholder="name"
       />
       <input
         type="text"
         value={email}
-        onChange={(e) => setEmail((prev) => (prev = e))}
+        onChange={(e) => setEmail((prev) => (prev = e.target.value))}
+        placeholder="email"
       />
+      <button onClick={writeUserData(userId, name, email, imageUrl)}>
+        add
+      </button>
+      <br />
       <button onClick={submit}>Exit</button>
     </div>
   );
