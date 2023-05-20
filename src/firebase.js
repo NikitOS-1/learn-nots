@@ -11,7 +11,7 @@ const firebaseConfig = {
   databaseURL: "https://auth-learning-d3909-default-rtdb.firebaseio.com/",
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);

@@ -1,38 +1,25 @@
-import { child, get, getDatabase, ref, set } from "firebase/database";
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
+import { app } from "../firebase";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
-  const db = getDatabase();
-  const dbRef = ref(db);
-  const userId = auth.currentUser.uid;
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [imageUrl, setImageUrl] = useState("icon.jpg");
+  const [imageUrl, setImageUrl] = useState("");
 
-  function writeUserData(userId, name, email, imageUrl) {
-    set(ref(db, "users/" + userId), {
-      username: name,
-      email: email,
-      profile_picture: imageUrl,
+  const db = getFirestore(app);
+  function add() {
+    addDoc(collection(db, "users"), {
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815,
     });
   }
-
-  get(child(dbRef, `users/${userId}`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -66,9 +53,7 @@ const HomePage = () => {
         onChange={(e) => setEmail((prev) => (prev = e.target.value))}
         placeholder="email"
       />
-      <button onClick={writeUserData(userId, name, email, imageUrl)}>
-        add
-      </button>
+      <button onClick={add}>add</button>
       <br />
       <button onClick={submit}>Exit</button>
     </div>
