@@ -1,7 +1,13 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { collection, addDoc, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getFirestore,
+  setDoc,
+  doc,
+} from "firebase/firestore";
 import { app } from "../firebase";
 
 const HomePage = () => {
@@ -14,10 +20,10 @@ const HomePage = () => {
 
   const db = getFirestore(app);
   function add() {
-    addDoc(collection(db, "users"), {
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815,
+    setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA",
     });
   }
 
