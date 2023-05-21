@@ -24,6 +24,7 @@ const HomePage = () => {
       name: "Los Angeles",
       state: "CA",
       country: "USA",
+      country: "USA",
     });
   }
 
