@@ -23,7 +23,6 @@ const HomePage = () => {
     setDoc(doc(db, "cities", "LA"), {
       name: "Los Angeles",
       state: "CA",
-      state: "CA",
       country: "USA",
     });
   }
