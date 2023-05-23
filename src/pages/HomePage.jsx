@@ -25,7 +25,6 @@ const HomePage = () => {
       state: "CA",
       state: "CA",
       country: "USA",
-      country: "USA",
     });
   }
 
