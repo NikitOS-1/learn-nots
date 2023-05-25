@@ -31,7 +31,6 @@ const HomePage = () => {
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         navigate("/sign-in");
-        navigate("/sign-in");
       }
     });
   });
