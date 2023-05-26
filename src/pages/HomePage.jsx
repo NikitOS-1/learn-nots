@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import AddFiles from "../components/addFiles/addFiles";
+import AddFile from "../components/AddFile/AddFile";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const HomePage = () => {
   return (
     <div>
       Home Private Page
-      <AddFiles />
+      <AddFile />
       <br />
       {error}
       <br />
