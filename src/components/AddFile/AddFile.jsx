@@ -1,12 +1,36 @@
+import {
+  addDoc,
+  collection,
+  doc,
+  getFirestore,
+  setDoc,
+} from "firebase/firestore";
 import { useState } from "react";
+import { app } from "../../firebase";
 
 const AddFile = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const db = getFirestore(app);
+  // const docData = ;
+  // const today = doc(db, "today/now");
 
-  const add = () => {};
+  const add = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "product"), {
+        title,
+        price,
+        desc,
+        imageUrl,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      console.log(docRef);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       <input
