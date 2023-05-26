@@ -25,7 +25,7 @@ const FormSignIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorMessage);
+        setError(errorMessage + " " + errorCode);
       });
   };
   return (

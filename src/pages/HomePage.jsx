@@ -13,19 +13,11 @@ import { app } from "../firebase";
 const HomePage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
+  const db = getFirestore(app);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-
-  const db = getFirestore(app);
-  function add() {
-    setDoc(doc(db, "cities", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA",
-    });
-  }
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -34,6 +26,15 @@ const HomePage = () => {
       }
     });
   });
+
+  function add() {
+    setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA",
+    });
+  }
+
   const submit = () => {
     signOut(auth)
       .then(() => {
@@ -46,7 +47,7 @@ const HomePage = () => {
 
   return (
     <div>
-      Home
+      Home Private Page
       <input
         type="text"
         value={name}
