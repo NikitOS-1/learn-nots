@@ -2,10 +2,11 @@ import {
   addDoc,
   collection,
   doc,
+  getDocs,
   getFirestore,
   setDoc,
 } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { app } from "../../firebase";
 
 const AddFile = () => {
@@ -31,41 +32,66 @@ const AddFile = () => {
       console.error(error);
     }
   };
+  const [data, setData] = useState([]);
+  const getDatas = async () => {
+    const querySnapshot = await getDocs(collection(db, "product"));
+    querySnapshot.forEach((doc) => {
+      // setData((prev) => [...prev, doc.data()]);
+    });
+  };
+  useEffect(() => {
+    getDatas();
+  }, [add]);
 
   return (
     <div>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle((prev) => (prev = e.target.value))}
-        placeholder="Title"
-      />
-      <input
-        type="text"
-        value={price}
-        onChange={(e) => setPrice((prev) => (prev = e.target.value))}
-        placeholder="Price"
-      />
+      <div>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle((prev) => (prev = e.target.value))}
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          value={price}
+          onChange={(e) => setPrice((prev) => (prev = e.target.value))}
+          placeholder="Price"
+        />
+        <br />
+        <textarea
+          name="Description"
+          placeholder="Description"
+          cols="34"
+          rows="10"
+          value={desc}
+          onChange={(e) =>
+            setDesc((prev) => (prev = e.target.value))
+          }></textarea>
+        <br />
+        <input
+          type="file"
+          value={imageUrl}
+          onChange={(e) => setImageUrl((prev) => (prev = e.target.value))}
+          placeholder="IMG"
+        />
+        <br />
+        <br />
+        <button style={{ width: "294px", height: "50px" }} onClick={add}>
+          Add
+        </button>
+      </div>
       <br />
-      <textarea
-        name="Description"
-        placeholder="Description"
-        cols="34"
-        rows="10"
-        value={desc}
-        onChange={(e) => setDesc((prev) => (prev = e.target.value))}></textarea>
-      <br />
-      <input
-        type="file"
-        value={imageUrl}
-        onChange={(e) => setImageUrl((prev) => (prev = e.target.value))}
-        placeholder="IMG"
-      />
-      <br />
-      <br />
-      <button style={{ width: "294px", height: "50px" }} onClick={add}>
-        Add
-      </button>
+      <div>
+        {data.map((e) => (
+          <div key={e}>
+            <p>{e.title}</p>
+            <p>{e.desc}</p>
+            <p>{e.price}</p>
+            <p>{e.imageUrl}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
