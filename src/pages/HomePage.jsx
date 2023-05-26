@@ -1,23 +1,16 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import {
-  collection,
-  addDoc,
-  getFirestore,
-  setDoc,
-  doc,
-} from "firebase/firestore";
-import { app } from "../firebase";
+import AddFiles from "../components/addFiles/addFiles";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
-  const db = getFirestore(app);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -27,40 +20,22 @@ const HomePage = () => {
     });
   });
 
-  function add() {
-    setDoc(doc(db, "cities", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA",
-    });
-  }
-
   const submit = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
       })
       .catch((error) => {
-        // An error happened.
+        setError(error);
       });
   };
 
   return (
     <div>
       Home Private Page
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName((prev) => (prev = e.target.value))}
-        placeholder="name"
-      />
-      <input
-        type="text"
-        value={email}
-        onChange={(e) => setEmail((prev) => (prev = e.target.value))}
-        placeholder="email"
-      />
-      <button onClick={add}>add</button>
+      <AddFiles />
+      <br />
+      {error}
       <br />
       <button onClick={submit}>Exit</button>
     </div>

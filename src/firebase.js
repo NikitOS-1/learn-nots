@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,7 +12,11 @@ const firebaseConfig = {
   databaseURL: "https://auth-learning-d3909-default-rtdb.firebaseio.com/",
 };
 
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
+
+// Initialize Cloud Firestore and get a reference to the service
+const dbFS = getFirestore(app);
