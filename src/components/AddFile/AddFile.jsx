@@ -25,7 +25,7 @@ const AddFile = () => {
       <textarea
         name="Description"
         placeholder="Description"
-        cols="30"
+        cols="34"
         rows="10"
         value={desc}
         onChange={(e) => setDesc((prev) => (prev = e.target.value))}></textarea>
