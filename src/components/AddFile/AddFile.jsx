@@ -37,7 +37,10 @@ const AddFile = () => {
         placeholder="IMG"
       />
       <br />
-      <button onClick={add}>Add</button>
+      <br />
+      <button style={{ width: "294px", height: "50px" }} onClick={add}>
+        Add
+      </button>
     </div>
   );
 };
