@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { app } from "../../firebase";
+import { get } from "firebase/database";
 
 const AddFile = () => {
   const [title, setTitle] = useState("");
@@ -33,18 +34,21 @@ const AddFile = () => {
     }
   };
   const [data, setData] = useState([]);
-  const getDatas = async () => {
-    const querySnapshot = await getDocs(collection(db, "product"));
-    querySnapshot.forEach((doc) => {
-      // setData((prev) => [...prev, doc.data()]);
-    });
+  const getData = async () => {
+    const datas = get(collection(db, "product"));
+    console.log(datas);
+    // const querySnapshot = await getDocs(collection(db, "product"));
+    // querySnapshot.forEach((doc) => {
+    //   setData([doc.data()]);
+    //   setData([doc.data()]);
+    // });
   };
   useEffect(() => {
-    getDatas();
-  }, [add]);
+    getData();
+  }, []);
 
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <div>
         <input
           type="text"
@@ -85,10 +89,12 @@ const AddFile = () => {
       <div>
         {data.map((e) => (
           <div key={e}>
+            <h1>------------------</h1>
             <p>{e.title}</p>
             <p>{e.desc}</p>
             <p>{e.price}</p>
             <p>{e.imageUrl}</p>
+            <h1>------------------</h1>
           </div>
         ))}
       </div>
