@@ -40,7 +40,6 @@ const AddFile = () => {
     // const querySnapshot = await getDocs(collection(db, "product"));
     // querySnapshot.forEach((doc) => {
     //   setData([doc.data()]);
-    //   setData([doc.data()]);
     // });
   };
   useEffect(() => {
