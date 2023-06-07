@@ -5,11 +5,13 @@ import SignUp from "../../pages/SignUp";
 import { RequireAuth } from "../../hooks/PrivatePages/RequireAuth";
 import ArrFunc from "../../components/ArrFunc/ArrFunc";
 import Spread from "../../components/Spread/Spread";
+import DestrArr from "../../components/DestrArr/DestrArr";
 
 const Main = () => {
   return (
     <main>
-      <Spread />
+      <DestrArr />
+      {/* <Spread /> */}
       {/* <ArrFunc /> */}
       {/* <Routes> */}
       {/* <Route path="/" element={<RequireAuth children={<HomePage />} />} />
