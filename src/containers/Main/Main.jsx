@@ -8,9 +8,9 @@ const Main = () => {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<RequireAuth children={<HomePage />} />} />
+        {/* <Route path="/" element={<RequireAuth children={<HomePage />} />} />
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/sign-up" element={<SignUp />} /> */}
       </Routes>
     </main>
   );
