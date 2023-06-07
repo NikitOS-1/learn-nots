@@ -23,6 +23,10 @@ const ArrFunc = () => {
   //   -----ES6
   //   const sum = (a = 0, b = 0) => a + b;
   //   const square = (num) => num * num;
+  //   -----------
+  //   const number = [1, 4, 142, 7, 2, 9, 4, 3, 4, 6, 8];
+  //   const res = number.sort((a, b) => a - b);
+  //   console.log(res);
 
   return <div>ArrFunc</div>;
 };
