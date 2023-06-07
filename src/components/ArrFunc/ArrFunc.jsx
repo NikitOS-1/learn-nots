@@ -27,7 +27,18 @@ const ArrFunc = () => {
   //   const number = [1, 4, 142, 7, 2, 9, 4, 3, 4, 6, 8];
   //   const res = number.sort((a, b) => a - b);
   //   console.log(res);
-
+  // ------------
+  //   const person = {
+  //     name: "nik",
+  //     age: 25,
+  //     languages: ["html", "css"],
+  //     greet() {
+  //       console.log(this.name);
+  //       this.languages.forEach(() => {
+  //         console.log(this);
+  //       });
+  //     },
+  //   };
   return <div>ArrFunc</div>;
 };
 export default ArrFunc;
