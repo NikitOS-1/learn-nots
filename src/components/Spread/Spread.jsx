@@ -18,6 +18,15 @@ const Spread = () => {
   };
   const newObjClone = { ...obj1 };
   const mergedObj = { ...obj1, ...obj2 };
+
+  // ...rest остаток от чего то
+  function sum(a, b, ...args) {
+    let result = a + b;
+    for (i = 0; i < args.length; i++) {
+      result += args[i];
+    }
+  }
+
   return <div>Spread</div>;
 };
 export default Spread;
