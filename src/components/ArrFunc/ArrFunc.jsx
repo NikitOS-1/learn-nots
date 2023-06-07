@@ -22,6 +22,7 @@ const ArrFunc = () => {
   //   }
   //   -----ES6
   //   const sum = (a = 0, b = 0) => a + b;
+  //   const square = (num) => num * num;
 
   return <div>ArrFunc</div>;
 };
