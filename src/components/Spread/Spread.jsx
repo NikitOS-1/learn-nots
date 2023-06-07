@@ -14,7 +14,7 @@ const Spread = () => {
   };
   const obj2 = {
     name: "Bory",
-    x: 99,
+    y: 99,
   };
   const newObjClone = { ...obj1 };
   const mergedObj = { ...obj1, ...obj2 };
