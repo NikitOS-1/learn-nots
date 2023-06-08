@@ -7,12 +7,14 @@ const DestrObj = () => {
       b: 10,
     },
     d: 4,
+    n: [1, 2, 3],
   };
 
   const {
     d: myName = 0,
     a: firstA = 0,
     c: { a: secondA = 0 },
+    n: [, deepB = 0],
     ...tail
   } = myOBJ || {};
 
