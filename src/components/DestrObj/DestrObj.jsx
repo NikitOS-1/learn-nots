@@ -9,7 +9,12 @@ const DestrObj = () => {
     d: 4,
   };
 
-  const { d: myName = 0, ...tail } = myOBJ || {};
+  const {
+    d: myName = 0,
+    a: firstA = 0,
+    c: { a: secondA = 0 },
+    ...tail
+  } = myOBJ || {};
 
   return <div>DestrObj</div>;
 };
