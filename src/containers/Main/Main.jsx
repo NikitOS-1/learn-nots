@@ -6,11 +6,13 @@ import { RequireAuth } from "../../hooks/PrivatePages/RequireAuth";
 import ArrFunc from "../../components/ArrFunc/ArrFunc";
 import Spread from "../../components/Spread/Spread";
 import DestrArr from "../../components/DestrArr/DestrArr";
+import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
   return (
     <main>
-      <DestrArr />
+      <DestrObj />
+      {/* <DestrArr /> */}
       {/* <Spread /> */}
       {/* <ArrFunc /> */}
       {/* <Routes> */}
