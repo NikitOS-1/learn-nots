@@ -11,7 +11,15 @@ import DestrObj from "../../components/DestrObj/DestrObj";
 const Main = () => {
   let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
 
-  let sortArr = arr.sort((a, b) => a - b);
+  let sortArr = arr.sort((x1, x2) => {
+    if (x1 < x2) {
+      return -1;
+    }
+    if (x1 === x2) {
+      return 0;
+    }
+    return 1;
+  });
   console.log(sortArr);
 
   return (
