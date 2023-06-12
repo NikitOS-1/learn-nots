@@ -22,7 +22,9 @@ const FindToArr = () => {
     },
   ];
   //Filter
-  const result = basket.map((el) => ({ name: el.title, price: el.price }));
+  //   const result = basket.map((el) => ({ name: el.title, price: el.price }));
+  //   const result = basket.filter((el) => el.price > 1);
+  //   const result = basket.reduce((acc, item) => acc + item.price, 0);
   console.log("result", result);
 
   return <div>FindToArr</div>;
