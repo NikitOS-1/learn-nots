@@ -9,14 +9,11 @@ import DestrArr from "../../components/DestrArr/DestrArr";
 import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  let max = arr[0];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < max) {
-      max = arr[i];
-    }
-  }
-  console.log(max);
+  let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
+
+  let sortArr = arr.sort((a, b) => a - b);
+  console.log(sortArr);
+
   return (
     <main>
       <DestrObj />
