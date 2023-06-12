@@ -1,9 +1,11 @@
 import DestrObj from "../../components/DestrObj/DestrObj";
+import FindToArr from "../../components/FindToArr/FindToArr";
 
 const Main = () => {
   return (
     <main>
-      <DestrObj />
+      <FindToArr />
+      {/* <DestrObj /> */}
       {/* <DestrArr /> */}
       {/* <Spread /> */}
       {/* <ArrFunc /> */}
