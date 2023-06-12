@@ -24,7 +24,7 @@ const Main = () => {
 
   const users = [
     {
-      name: "djon",
+      name: "Djon",
       age: 12,
     },
     {
@@ -37,13 +37,7 @@ const Main = () => {
     },
   ];
   let sortUsersToStr = users.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (a.name === b.name) {
-      return 0;
-    }
-    return 1;
+    return a.name.localeCompare(b.name);
   });
   console.log(sortUsersToStr);
   // let sortUsersToNumb = users.sort((a, b) => a.age - b.age);
