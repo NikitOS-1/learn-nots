@@ -18,6 +18,6 @@ const DestrObj = () => {
     ...tail
   } = myOBJ || {};
 
-  return <div>DestrObj</div>;
+  return <div>DestrObj.</div>;
 };
 export default DestrObj;
