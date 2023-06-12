@@ -9,6 +9,9 @@ import DestrArr from "../../components/DestrArr/DestrArr";
 import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const sumArr = arr.reduce((acc, curr) => acc + curr, 0);
+  console.log(sumArr);
   return (
     <main>
       <DestrObj />
