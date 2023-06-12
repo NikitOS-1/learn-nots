@@ -18,7 +18,7 @@ const FindToArr = () => {
       category: "product",
     },
   ];
-  const result = numbers.indexOf(5);
+  const result = numbers.includes(9);
   console.log("result", result);
   return <div>FindToArr</div>;
 };
