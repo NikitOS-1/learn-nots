@@ -9,18 +9,37 @@ import DestrArr from "../../components/DestrArr/DestrArr";
 import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
-  let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
+  // let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
 
-  let sortArr = arr.sort((x1, x2) => {
-    if (x1 < x2) {
-      return -1;
-    }
-    if (x1 === x2) {
-      return 0;
-    }
-    return 1;
-  });
-  console.log(sortArr);
+  // let sortArr = arr.sort((x1, x2) => {
+  //   if (x1 < x2) {
+  //     return -1;
+  //   }
+  //   if (x1 === x2) {
+  //     return 0;
+  //   }
+  //   return 1;
+  // });
+  // console.log(sortArr);
+
+  const users = [
+    {
+      name: "Djon",
+      age: 12,
+    },
+    {
+      name: "Jkol",
+      age: 10,
+    },
+    {
+      name: "Qwor",
+      age: 14,
+    },
+  ];
+
+  let sortUsers = users.sort((a, b) => a.age - b.age);
+  console.log(users);
+  console.log(sortUsers);
 
   return (
     <main>
