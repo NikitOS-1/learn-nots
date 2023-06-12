@@ -1,10 +1,12 @@
 import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
+import Recurse from "../../components/Recurse/Recurse";
 
 const Main = () => {
   return (
     <main>
-      <FindToArr />
+      <Recurse />
+      {/* <FindToArr /> */}
       {/* <DestrObj /> */}
       {/* <DestrArr /> */}
       {/* <Spread /> */}
