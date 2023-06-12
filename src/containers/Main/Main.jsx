@@ -1,3 +1,4 @@
+import Closure from "../../components/Closure/Closure";
 import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
 import Recurse from "../../components/Recurse/Recurse";
@@ -5,7 +6,8 @@ import Recurse from "../../components/Recurse/Recurse";
 const Main = () => {
   return (
     <main>
-      <Recurse />
+      <Closure />
+      {/* <Recurse /> */}
       {/* <FindToArr /> */}
       {/* <DestrObj /> */}
       {/* <DestrArr /> */}
