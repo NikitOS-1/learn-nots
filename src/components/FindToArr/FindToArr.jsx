@@ -21,7 +21,7 @@ const FindToArr = () => {
       category: "product",
     },
   ];
-  const result = basket.find((element) => element.category === "product");
+  const result = basket.findIndex((element) => element.id === 1);
   console.log("result", result);
 
   return <div>FindToArr</div>;
