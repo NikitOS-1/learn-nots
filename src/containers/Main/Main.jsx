@@ -9,14 +9,14 @@ import DestrArr from "../../components/DestrArr/DestrArr";
 import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
-  let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
-
-  let revArr = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    revArr.push(arr[i]);
+  const array = [7, "correct", 0, false, 9, NaN, ""];
+  const notFalsy = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!!array[i]) {
+      notFalsy.push(array[i]);
+    }
   }
-  console.log(revArr);
-
+  console.log(notFalsy);
   return (
     <main>
       <DestrObj />
