@@ -10,7 +10,12 @@ import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
   let arr = [9, 3, 2, 8, 5, 6, 7, 4, 1];
-  console.log(arr.reverse());
+
+  let revArr = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    revArr.push(arr[i]);
+  }
+  console.log(revArr);
 
   return (
     <main>
