@@ -24,22 +24,31 @@ const Main = () => {
 
   const users = [
     {
-      name: "Djon",
+      name: "djon",
       age: 12,
     },
     {
-      name: "Jkol",
+      name: "akol",
       age: 10,
     },
     {
-      name: "Qwor",
+      name: "fQwor",
       age: 14,
     },
   ];
-
-  let sortUsers = users.sort((a, b) => a.age - b.age);
-  console.log(users);
-  console.log(sortUsers);
+  let sortUsersToStr = users.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name === b.name) {
+      return 0;
+    }
+    return 1;
+  });
+  console.log(sortUsersToStr);
+  // let sortUsersToNumb = users.sort((a, b) => a.age - b.age);
+  // console.log(users);
+  // console.log(sortUsersToNumb);
 
   return (
     <main>
