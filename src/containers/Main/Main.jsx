@@ -10,15 +10,7 @@ import DestrObj from "../../components/DestrObj/DestrObj";
 
 const Main = () => {
   let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const sumArr = arr.reduce((acc, curr) => acc + curr, 0);
-  console.log(sumArr);
 
-  let acc = 0;
-  for (let i = 0; i < arr.length; i++) {
-    acc += arr[i];
-  }
-
-  console.log(acc);
   return (
     <main>
       <DestrObj />
