@@ -4,11 +4,6 @@ import FindToArr from "../../components/FindToArr/FindToArr";
 import Recurse from "../../components/Recurse/Recurse";
 
 const Main = () => {
-  const sum = (num1, num2) => {
-    let res = num1 + num2;
-    return res;
-  };
-  console.log(sum(2, 2));
   return (
     <main>
       <Closure />
