@@ -1,3 +1,4 @@
+import AsyncFn from "../../components/AsyncFn/AsyncFn";
 import Closure from "../../components/Closure/Closure";
 import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
@@ -7,7 +8,8 @@ import Recurse from "../../components/Recurse/Recurse";
 const Main = () => {
   return (
     <main>
-      <Promise1 />
+      <AsyncFn />
+      {/* <Promise1 /> */}
       {/* <Closure /> */}
       {/* <Recurse /> */}
       {/* <FindToArr /> */}
