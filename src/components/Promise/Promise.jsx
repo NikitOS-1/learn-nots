@@ -4,7 +4,9 @@ const Promise1 = () => {
       resolve("foo");
     }, 1000);
   });
-  promice1.then((value) => {});
+  promice1.then((value) => {
+    console.log(value);
+  });
   promice1.catch((value) => {});
   console.log(promice1);
   return <div>Promise</div>;
