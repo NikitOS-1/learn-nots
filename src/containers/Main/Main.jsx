@@ -8,7 +8,7 @@ import Recurse from "../../components/Recurse/Recurse";
 const Main = () => {
   return (
     <main>
-      <AsyncFn />
+      {/* <AsyncFn /> */}
       {/* <Promise1 /> */}
       {/* <Closure /> */}
       {/* <Recurse /> */}
