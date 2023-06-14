@@ -12,7 +12,10 @@ const AsyncFn = () => {
   //     return console.log(post);
   //   }
   //   getPosts(url);
+  //
   const getComments = async () => {};
+  //
+
   return <div>AsyncFn</div>;
 };
 export default AsyncFn;
