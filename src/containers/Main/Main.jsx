@@ -4,6 +4,7 @@ import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
 import Promise1 from "../../components/Promise/Promise";
 import Recurse from "../../components/Recurse/Recurse";
+import ReactHooKForm from "../../hooks/ReactHooKForm/ReactHooKForm";
 
 const Main = () => {
   return (
@@ -22,6 +23,7 @@ const Main = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} /> */}
       {/* </Routes> */}
+      <ReactHooKForm />
     </main>
   );
 };
