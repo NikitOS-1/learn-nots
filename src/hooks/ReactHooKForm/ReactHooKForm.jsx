@@ -1,16 +1,45 @@
+import { useForm } from "react-hook-form";
 import "./ReactHooKForm.scss";
 
 const ReactHooKForm = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
+
   return (
-    <form action="submit">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <h2>React Hook Form</h2>
-      <div className="firstname">
-        <input type="text" placeholder="First name" />
+      <label className="firstname">
+        First name
+        <input
+          type="text"
+          {...register("firstName", {
+            required: "You must to put your Name",
+            minLength: {
+              value: 5,
+              message: "Minimum 5 symbols",
+            },
+          })}
+        />
+      </label>
+      <div>
+        {errors?.firstName && (
+          <p style={{ color: "tomato" }}>
+            {errors?.firstName?.message || "Error!"}
+          </p>
+        )}
       </div>
-      <div className="lastname">
-        <input type="text" placeholder="Last name" />
-      </div>
-      <button>Submit</button>
+      <label className="lastname">
+        Last name
+        <input type="text" {...register("lastName")} />
+      </label>
+      <input type="submit" className="button" />
     </form>
   );
 };
