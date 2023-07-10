@@ -4,7 +4,7 @@ import "./ReactHooKForm.scss";
 const ReactHooKForm = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     reset,
   } = useForm({ mode: "onBlur" });
@@ -59,7 +59,32 @@ const ReactHooKForm = () => {
         )}
       </div>
 
-      <input type="submit" className="button" />
+      <label className="lastname">
+        Email
+        <input
+          type="text"
+          {...register("email", {
+            required: "You must to put your email",
+            minLength: {
+              value: 5,
+              message: "Minimum 5 symbols",
+            },
+            pattern: {
+              value: /[@]/,
+              message: "This is not valid email",
+            },
+          })}
+        />
+      </label>
+      <div className="error">
+        {errors?.email && (
+          <p style={{ color: "tomato" }}>
+            {errors?.email?.message || "Error!"}
+          </p>
+        )}
+      </div>
+
+      <input type="submit" className="button" disabled={!isValid} />
     </form>
   );
 };
