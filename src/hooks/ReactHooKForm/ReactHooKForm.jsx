@@ -10,7 +10,9 @@ const ReactHooKForm = () => {
   } = useForm({ mode: "onBlur" });
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    console.log(data.firstName);
+    console.log(data.lastname);
+    console.log(data.email);
     reset();
   };
 

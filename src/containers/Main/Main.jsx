@@ -23,7 +23,7 @@ const Main = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} /> */}
       {/* </Routes> */}
-      <ReactHooKForm />
+      {/* <ReactHooKForm /> */}
     </main>
   );
 };
