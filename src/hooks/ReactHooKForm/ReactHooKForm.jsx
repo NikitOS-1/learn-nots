@@ -6,10 +6,12 @@ const ReactHooKForm = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+    reset,
+  } = useForm({ mode: "onBlur" });
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
+    reset();
   };
 
   return (
@@ -28,17 +30,35 @@ const ReactHooKForm = () => {
           })}
         />
       </label>
-      <div>
+      <div className="error">
         {errors?.firstName && (
           <p style={{ color: "tomato" }}>
             {errors?.firstName?.message || "Error!"}
           </p>
         )}
       </div>
+
       <label className="lastname">
         Last name
-        <input type="text" {...register("lastName")} />
+        <input
+          type="text"
+          {...register("lastname", {
+            required: "You must to put your Name",
+            minLength: {
+              value: 5,
+              message: "Minimum 5 symbols",
+            },
+          })}
+        />
       </label>
+      <div className="error">
+        {errors?.lastname && (
+          <p style={{ color: "tomato" }}>
+            {errors?.lastname?.message || "Error!"}
+          </p>
+        )}
+      </div>
+
       <input type="submit" className="button" />
     </form>
   );
