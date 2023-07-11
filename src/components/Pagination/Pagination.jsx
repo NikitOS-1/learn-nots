@@ -12,9 +12,12 @@ const Paginations = () => {
 
   useEffect(() => {
     axios.get(BASE_URL + `query=${query}&page=${page - 1}`).then(({ data }) => {
-      console.log(data);
       setPost(data.hits);
       setPageQty(data.nbPages);
+
+      if (data.nbPages < page) {
+        setPage(1);
+      }
     });
   }, [query, page]);
 
@@ -32,6 +35,8 @@ const Paginations = () => {
             <Pagination
               count={pageQty}
               page={page}
+              showFirstButton
+              showLastButton
               onChange={(_, num) => setPage(num)}
               sx={{ marginY: 3, marginX: "auto" }}
             />
