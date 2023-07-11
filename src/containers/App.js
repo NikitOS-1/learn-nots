@@ -9,7 +9,7 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <div className={!checked ? "day" : "night"}>
+    <div className={!checked ? "night" : "day"}>
       <Header />
       <Main />
       <Footer />
