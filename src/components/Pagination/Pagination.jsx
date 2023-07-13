@@ -20,7 +20,7 @@ const Paginations = () => {
       }
     });
   }, [query, page]);
-
+  ю;
   return (
     <div>
       <Container sx={{ marginTop: 5 }} maxWidth="md">
