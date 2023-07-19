@@ -2,13 +2,14 @@ import AsyncFn from "../../components/AsyncFn/AsyncFn";
 import Closure from "../../components/Closure/Closure";
 import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
-import Motion from "../../components/Motion/Motion";
+import Motion from "../../components/Motion/Motionbasic/Motion";
 import ShowHidden from "../../components/Motion/AnimatePresence/ShowHidden";
 import Pagination from "../../components/Pagination/Pagination";
 import Promise1 from "../../components/Promise/Promise";
 import Recurse from "../../components/Recurse/Recurse";
 import ReactHooKForm from "../../hooks/ReactHooKForm/ReactHooKForm";
 import AnimatePresences from "../../components/Motion/AnimatePresence/AnimatePresences";
+import FilterPages from "../../components/Motion/Filter/FilterPages";
 
 const Main = () => {
   return (
@@ -30,7 +31,8 @@ const Main = () => {
       {/* <ReactHooKForm /> */}
       {/* <Pagination /> */}
       {/* <Motion /> */}
-      <AnimatePresences />
+      {/* <AnimatePresences /> */}
+      <FilterPages />
     </main>
   );
 };
