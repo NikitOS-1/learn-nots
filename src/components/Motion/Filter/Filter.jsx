@@ -1,18 +1,21 @@
-import { AnimatePresence, animate, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Button from "./Button";
 
 const Filter = ({ data }) => {
-  const [cards, setCards] = useState(
-    data.filter((el) => el.category === "cars")
+  const [cards, setCards] = useState(data);
+
+  const buttons = data.reduce(
+    (acc, el) => {
+      if (acc.includes(el.category)) return acc;
+      return [...acc, el.category];
+    },
+    ["all"]
   );
 
-  const buttons = data.reduce((acc, el) => {
-    if (acc.includes(el.category)) return acc;
-    return [...acc, el.category];
-  }, []);
-
   const handleFilter = (selector) => {
+    if (selector === "all") return setCards(data);
+
     setCards(data.filter((el) => el.category === selector));
   };
   return (
@@ -22,10 +25,11 @@ const Filter = ({ data }) => {
           <Button key={btn} text={btn} handleClick={() => handleFilter(btn)} />
         ))}
       </div>
-      <div style={{ overflow: "hidden", maxWidth: 400 }}>
+      <motion.div layout style={{ overflow: "hidden", maxWidth: 400 }}>
         <AnimatePresence mode="wait">
           {cards.map((el) => (
             <motion.div
+              layout
               key={el.title}
               style={boxStyle}
               initial={{ opacity: 0 }}
@@ -36,7 +40,7 @@ const Filter = ({ data }) => {
             </motion.div>
           ))}
         </AnimatePresence>
-      </div>
+      </motion.div>
     </div>
   );
 };
