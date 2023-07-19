@@ -3,11 +3,12 @@ import Closure from "../../components/Closure/Closure";
 import DestrObj from "../../components/DestrObj/DestrObj";
 import FindToArr from "../../components/FindToArr/FindToArr";
 import Motion from "../../components/Motion/Motion";
-import ShowHidden from "../../components/Motion/ShowHidden";
+import ShowHidden from "../../components/Motion/AnimatePresence/ShowHidden";
 import Pagination from "../../components/Pagination/Pagination";
 import Promise1 from "../../components/Promise/Promise";
 import Recurse from "../../components/Recurse/Recurse";
 import ReactHooKForm from "../../hooks/ReactHooKForm/ReactHooKForm";
+import AnimatePresences from "../../components/Motion/AnimatePresence/AnimatePresences";
 
 const Main = () => {
   return (
@@ -29,7 +30,7 @@ const Main = () => {
       {/* <ReactHooKForm /> */}
       {/* <Pagination /> */}
       {/* <Motion /> */}
-      <ShowHidden />
+      <AnimatePresences />
     </main>
   );
 };
