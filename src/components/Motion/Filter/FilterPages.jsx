@@ -1,4 +1,10 @@
+import Filter from "./Filter";
+import { data } from "./data";
 const FilterPages = () => {
-  return <div>FilterPages</div>;
+  return (
+    <div>
+      <Filter data={data} />
+    </div>
+  );
 };
 export default FilterPages;
