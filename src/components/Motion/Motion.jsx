@@ -15,7 +15,9 @@ const Motion = () => {
     }),
     hidden: { opacity: 0 },
   };
+
   const items = ["text1", "text2", "text3"];
+
   return (
     <>
       <motion.div
