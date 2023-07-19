@@ -10,6 +10,7 @@ import Recurse from "../../components/Recurse/Recurse";
 import ReactHooKForm from "../../hooks/ReactHooKForm/ReactHooKForm";
 import AnimatePresences from "../../components/Motion/AnimatePresence/AnimatePresences";
 import FilterPages from "../../components/Motion/Filter/FilterPages";
+import Menu from "../../components/Motion/AnimateSharedLayout/Menu";
 
 const Main = () => {
   return (
@@ -30,9 +31,11 @@ const Main = () => {
       {/* </Routes> */}
       {/* <ReactHooKForm /> */}
       {/* <Pagination /> */}
+      {/* ------------Animation Frame Motion------------ */}
       {/* <Motion /> */}
       {/* <AnimatePresences /> */}
-      <FilterPages />
+      {/* <FilterPages /> */}
+      <Menu />
     </main>
   );
 };
