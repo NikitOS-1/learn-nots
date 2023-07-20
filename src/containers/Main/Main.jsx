@@ -34,8 +34,8 @@ const Main = () => {
       {/* ------------Animation Frame Motion------------ */}
       {/* <Motion /> */}
       {/* <AnimatePresences /> */}
+      <Menu />
       <FilterPages />
-      {/* <Menu /> */}
     </main>
   );
 };

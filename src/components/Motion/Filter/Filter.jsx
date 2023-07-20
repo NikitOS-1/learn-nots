@@ -15,11 +15,11 @@ const Filter = ({ data }) => {
 
   const handleFilter = (selector) => {
     if (selector === "all") return setCards(data);
-
     setCards(data.filter((el) => el.category === selector));
   };
+
   return (
-    <div>
+    <motion.div>
       <div>
         {buttons.map((btn) => (
           <Button key={btn} text={btn} handleClick={() => handleFilter(btn)} />
@@ -41,7 +41,7 @@ const Filter = ({ data }) => {
           ))}
         </AnimatePresence>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 export default Filter;
