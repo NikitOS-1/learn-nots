@@ -11,7 +11,7 @@ import ReactHooKForm from "../../hooks/ReactHooKForm/ReactHooKForm";
 import AnimatePresences from "../../components/Motion/AnimatePresence/AnimatePresences";
 import FilterPages from "../../components/Motion/Filter/FilterPages";
 import Menu from "../../components/Motion/AnimateSharedLayout/Menu";
-
+import ViewportAnim from "../../components/Motion/ViewportAnim/ViewportAnim";
 const Main = () => {
   return (
     <main>
@@ -36,6 +36,7 @@ const Main = () => {
       {/* <AnimatePresences /> */}
       {/* <Menu /> */}
       {/* <FilterPages /> */}
+      <ViewportAnim />
     </main>
   );
 };
