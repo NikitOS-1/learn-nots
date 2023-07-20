@@ -32,7 +32,12 @@ function MenuItem(props) {
   return (
     <motion.div
       onClick={handleClick}
-      style={{ margin: "0 0.5rem", fontWeight: 900, position: "relative" }}
+      style={{
+        margin: "0 0.5rem",
+        fontWeight: 900,
+        position: "relative",
+        cursor: "pointer",
+      }}
       initial={{ color: "#000" }}
       animate={{ color: isSelected ? "rgb(255, 0, 0)" : "#000" }}>
       {isSelected && <ActiveLine />}
@@ -46,10 +51,11 @@ function ActiveLine() {
     <motion.div
       layoutId="activeItem"
       style={{
-        width: "100%",
+        width: "calc(100% - 10px)",
         height: "4px",
         position: "absolute",
         bottom: "-6px",
+        left: "5px",
         backgroundColor: "rgb(255,0,0)",
       }}
     />
