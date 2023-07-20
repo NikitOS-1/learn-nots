@@ -1,5 +1,6 @@
 const ViewportAnim = () => {
-  const array = [[1, 1, [1, 1]], [1], [1, 1]];
+  const array = [[10, 1, [2, 11]], [1], [4, 1]];
+
   let onesArray = [];
 
   function flat(arr) {
@@ -12,7 +13,7 @@ const ViewportAnim = () => {
     });
     return onesArray;
   }
-  console.log(flat(array));
+  console.log(flat(array).reduce((acc, el) => acc + el, 0));
   return <div>ViewportAnim</div>;
 };
 export default ViewportAnim;
