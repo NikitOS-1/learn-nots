@@ -26,6 +26,40 @@ const Algorithms = () => {
   //   return arr;
   // }
 
+  // -------------recurse--------------
+  // let arr = [[2, 2, 3, [1, 2, [1]]], 1, [12, [1, 3]]];
+
+  // let newArray = [];
+
+  // const flat = (array) => {
+  //   array.forEach((el) => {
+  //     if (Array.isArray(el)) {
+  //       flat(el);
+  //     } else {
+  //       newArray.push(el);
+  //     }
+  //   });
+  //   return newArray;
+  // };
+
+  // console.log(flat(arr).reduce((acc, el) => acc + el, 0));
+  // let arr = [1, 3, 5, 2, 8, 9, 6, 4];
+
+  // -------------sort--------------
+  // const sortArray = (array) => {
+  //   let sortArr = array;
+  //   for (let i = 0; i < sortArr.length; i++) {
+  //     for (let x = 0; x < sortArr.length; x++) {
+  //       if (sortArr[x + 1] < sortArr[x]) {
+  //         let minNumber = sortArr[x + 1];
+  //         sortArr[x + 1] = sortArr[x];
+  //         sortArr[x] = minNumber;
+  //       }
+  //     }
+  //   }
+  //   return sortArr;
+  // };
+  // console.log(sortArray(arr))
   return (
     <div>
       <div>
