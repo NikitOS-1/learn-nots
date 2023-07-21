@@ -36,7 +36,7 @@ const Main = () => {
       {/* <AnimatePresences /> */}
       {/* <Menu /> */}
       {/* <FilterPages /> */}
-      <ViewportAnim />
+      {/* <ViewportAnim /> */}
     </main>
   );
 };
