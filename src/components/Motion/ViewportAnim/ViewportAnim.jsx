@@ -1,20 +1,21 @@
 const ViewportAnim = () => {
-  //   console.log(1);
+  // let arr = [[2, 2, 3, [1, 2, [1]]], 1, [12, [1, 3]]];
 
-  //   const a = new Promise((resolve, reject) => resolve(console.log(2)));
+  // let newArray = [];
 
-  //   a.then((res) => console.log(3));
+  // const flat = (array) => {
+  //   array.forEach((el) => {
+  //     if (Array.isArray(el)) {
+  //       flat(el);
+  //     } else {
+  //       newArray.push(el);
+  //     }
+  //   });
+  //   return newArray;
+  // };
 
-  //   setTimeout(() => {
-  //     console.log(4);
-  //   }, 0);
+  // console.log(flat(arr).reduce((acc, el) => acc + el, 0));
 
-  //   console.log(5);
-  // //1
-  // //2
-  // //5
-  // //3
-  // //4
   return <div>ViewportAnim</div>;
 };
 export default ViewportAnim;
