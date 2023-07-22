@@ -1,5 +1,5 @@
 const ViewportAnim = () => {
-  let arr = [1, 2, 3, 4, 5];
+  let arr = ["cat", "dog", "fs"];
   for (let item of arr) {
     console.log(item);
   }
