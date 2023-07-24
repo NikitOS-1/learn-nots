@@ -10,9 +10,11 @@ const ViewportAnim = () => {
 
   const copyItem = {};
 
-  for (let key in item) {
-    copyItem[key] = item[key];
-  }
+  // for (let key in item) {
+  //   copyItem[key] = item[key];
+  // }
+
+  // Object.assign(copyItem, item);
 
   return <div>ViewportAnim</div>;
 };
