@@ -8,9 +8,11 @@ const ViewportAnim = () => {
     variants: [1, 2, 3, 4, { fn: () => console.log("fn") }],
   };
 
-  const jsonData = JSON.stringify(item);
-  const getJsonData = JSON.parse(jsonData);
-  console.log(jsonData);
+  const copyItem = {};
+
+  for (let key in item) {
+    copyItem[key] = item[key];
+  }
 
   return <div>ViewportAnim</div>;
 };
