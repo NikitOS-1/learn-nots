@@ -1,5 +1,3 @@
-Bro;
-
 const PaginationWithRRD = () => {
   return <div>PaginationWithRRD</div>;
 };
