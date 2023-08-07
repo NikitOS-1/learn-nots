@@ -3,6 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 // import Page1 from "./Pages/Page1";
 // import Page2 from "./Pages/Page2";
 // import Page3 from "./Pages/Page3";
+// It helps to improve your code and quickly loading pages into components
 
 const Page1 = lazy(() => import("./Pages/Page1"));
 const Page2 = lazy(() => import("./Pages/Page2"));
