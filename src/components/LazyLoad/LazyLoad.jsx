@@ -1,7 +1,12 @@
+import { Suspense, lazy } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import Page1 from "./Pages/Page1";
-import Page2 from "./Pages/Page2";
-import Page3 from "./Pages/Page3";
+// import Page1 from "./Pages/Page1";
+// import Page2 from "./Pages/Page2";
+// import Page3 from "./Pages/Page3";
+
+const Page1 = lazy(() => import("./Pages/Page1"));
+const Page2 = lazy(() => import("./Pages/Page2"));
+const Page3 = lazy(() => import("./Pages/Page3"));
 
 const LazyLoad = () => {
   return (
@@ -19,9 +24,30 @@ const LazyLoad = () => {
       </header>
       <main>
         <Routes>
-          <Route path="home" element={<Page1 />} />
-          <Route path="product" element={<Page2 />} />
-          <Route path="about" element={<Page3 />} />
+          <Route
+            path="home"
+            element={
+              <Suspense fallback={"Loading..."}>
+                <Page1 />
+              </Suspense>
+            }
+          />
+          <Route
+            path="product"
+            element={
+              <Suspense fallback={"Loading..."}>
+                <Page2 />
+              </Suspense>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <Suspense fallback={"Loading..."}>
+                <Page3 />
+              </Suspense>
+            }
+          />
         </Routes>
       </main>
     </div>
