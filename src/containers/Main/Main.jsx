@@ -12,6 +12,7 @@ import AnimatePresences from "../../components/Motion/AnimatePresence/AnimatePre
 import FilterPages from "../../components/Motion/Filter/FilterPages";
 import Menu from "../../components/Motion/AnimateSharedLayout/Menu";
 import LazyLoad from "../../components/LazyLoad/LazyLoad";
+import LocalStorage from "../../components/LocalStorage/LocalStorage";
 const Main = () => {
   return (
     <main>
@@ -36,7 +37,8 @@ const Main = () => {
       {/* <AnimatePresences /> */}
       {/* <Menu /> */}
       {/* <FilterPages /> */}
-      <LazyLoad />
+      {/* <LazyLoad /> */}
+      <LocalStorage />
     </main>
   );
 };
