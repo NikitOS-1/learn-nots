@@ -4,7 +4,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -12,6 +12,7 @@ const SignUp = () => {
   const [pass2, setPass2] = useState("");
   const [showPass, setShowPass] = useState("password");
   const [error, setError] = useState(null);
+
   const auth = getAuth();
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ const SignUp = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setError((prev) => errorMessage);
+          setError((prev) => (prev = errorMessage));
         });
     }
   };

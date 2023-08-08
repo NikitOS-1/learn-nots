@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { isDay } from "../../redux/dayOrNightSlice";
+import { isDay } from "../../redux/themeReducer";
 import { Switch } from "@mui/material";
 
 const Header = () => {
