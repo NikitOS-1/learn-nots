@@ -1,6 +1,10 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -9,6 +13,7 @@ const SignUp = () => {
   const [showPass, setShowPass] = useState("password");
   const [error, setError] = useState(null);
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const showPassword = () => {
     setShowPass((prev) => (prev === "password" ? "text" : "password"));
@@ -20,7 +25,6 @@ const SignUp = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
-          <Navigate to={"/"} />;
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -29,6 +33,12 @@ const SignUp = () => {
         });
     }
   };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigate("/");
+    }
+  });
 
   return (
     <div>
@@ -60,7 +70,7 @@ const SignUp = () => {
           <button onClick={showPassword}>Show Password</button>
         </div>
       </div>
-      <div>{error}</div>
+      <div style={{ color: "red" }}>{error}</div>
       <button style={{ margin: "5px", width: "265px" }} onClick={createAccount}>
         Create account
       </button>

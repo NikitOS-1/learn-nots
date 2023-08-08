@@ -1,24 +1,40 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [showPass, setShowPass] = useState("password");
+  const [error, setError] = useState(null);
+  const auth = getAuth();
+  const navigate = useNavigate();
+
   const showPassword = () => {
     setShowPass((prev) => (prev === "password" ? "text" : "password"));
   };
-  //   const auth = getAuth();
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       // ...
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //     });
+
+  const signIn = () => {
+    signInWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError((prev) => (prev = errorMessage));
+      });
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigate("/");
+    }
+  });
 
   return (
     <div>
@@ -40,7 +56,10 @@ const SignIn = () => {
         />
         <button onClick={showPassword}>Show Password</button>
       </div>
-      <button style={{ margin: "5px", width: "265px" }}>Sign In</button>
+      <div style={{ color: "red" }}>{error}</div>
+      <button style={{ margin: "5px", width: "265px" }} onClick={signIn}>
+        Sign In
+      </button>
     </div>
   );
 };
