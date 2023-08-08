@@ -1,12 +1,13 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
-  const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState("password");
+  const [error, setError] = useState(null);
   const auth = getAuth();
 
   const showPassword = () => {
@@ -15,15 +16,16 @@ const SignUp = () => {
 
   const createAccount = () => {
     if (pass1 === pass2) {
-      createUserWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, pass1)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          <Navigate to={"/"} />;
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorMessage);
+          setError((prev) => errorMessage);
         });
     }
   };
@@ -58,6 +60,7 @@ const SignUp = () => {
           <button onClick={showPassword}>Show Password</button>
         </div>
       </div>
+      <div>{error}</div>
       <button style={{ margin: "5px", width: "265px" }} onClick={createAccount}>
         Create account
       </button>
