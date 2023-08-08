@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addUser, clearUser } from "../../../redux/authReducer";
+import AddData from "../Components/AddData";
+import ReadData from "../Components/ReadData";
 
 const HomePage = () => {
   const { email, id, token } = useSelector((data) => data.auth);
@@ -31,13 +33,9 @@ const HomePage = () => {
   return (
     <div>
       <button onClick={() => signOut(auth)}>Exit</button>
-      <p>
-        Hello {email}
-        <br />
-        id: {id}
-        <br />
-        token: {token}
-      </p>
+      <p>Hello {email}</p>
+      <AddData />
+      <ReadData />
     </div>
   );
 };
