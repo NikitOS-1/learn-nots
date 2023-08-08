@@ -5,14 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { addUser, clearUser } from "../../../redux/authReducer";
 
 const HomePage = () => {
+  const { email, id, token } = useSelector((data) => data.auth);
+
   const auth = getAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { email, id, token } = useSelector((data) => data.auth);
-
-  const exit = () => {
-    signOut(auth);
-  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -33,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <button onClick={exit}>Exit</button>
+      <button onClick={() => signOut(auth)}>Exit</button>
       <p>
         Hello {email}
         <br />
