@@ -1,19 +1,60 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 
 const SignUp = () => {
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+  const [email, setEmail] = useState("");
+  const [pass1, setPass1] = useState("");
+  const [pass2, setPass2] = useState("");
+  const [showPass, setShowPass] = useState("password");
 
-  return <div>SignUp</div>;
+  const showPassword = () => {
+    setShowPass((prev) => (prev === "password" ? "text" : "password"));
+  };
+
+  //   const auth = getAuth();
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       // ..
+  //     });
+
+  return (
+    <div>
+      <h1>Sign Up</h1>
+      <div>
+        <div style={{ margin: "5px" }}>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail((prev) => e.target.value)}
+            placeholder="Email"
+          />
+        </div>
+        <div style={{ margin: "5px" }}>
+          <input
+            type={showPass}
+            value={pass1}
+            onChange={(e) => setPass1((prev) => e.target.value)}
+            placeholder="Password"
+          />
+        </div>
+        <div style={{ margin: "5px" }}>
+          <input
+            type={showPass}
+            value={pass2}
+            onChange={(e) => setPass2((prev) => e.target.value)}
+            placeholder="Password"
+          />
+          <button onClick={showPassword}>Show Password</button>
+        </div>
+      </div>
+      <button style={{ margin: "5px", width: "265px" }}>Create account</button>
+    </div>
+  );
 };
 export default SignUp;
