@@ -11,10 +11,13 @@ import { app } from "../../firebase";
 import { get } from "firebase/database";
 
 const AddFile = () => {
+  const [data, setData] = useState([]);
+
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+
   const db = getFirestore(app);
   // const docData = ;
   // const today = doc(db, "today/now");
@@ -27,21 +30,22 @@ const AddFile = () => {
         desc,
         imageUrl,
       });
-      console.log("Document written with ID: ", docRef.id);
-      console.log(docRef);
+      // console.log("Document written with ID: ", docRef.id);
+      // console.log(docRef);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
-  const [data, setData] = useState([]);
+
   const getData = async () => {
     const datas = get(collection(db, "product"));
     console.log(datas);
-    // const querySnapshot = await getDocs(collection(db, "product"));
-    // querySnapshot.forEach((doc) => {
-    //   setData([doc.data()]);
-    // });
+    const querySnapshot = await getDocs(collection(db, "product"));
+    querySnapshot.forEach((doc) => {
+      setData([doc.data()]);
+    });
   };
+
   useEffect(() => {
     getData();
   }, []);

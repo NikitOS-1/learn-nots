@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import AddFile from "../components/AddFile/AddFile";
 
@@ -20,7 +20,7 @@ const HomePage = () => {
     });
   });
 
-  const submit = () => {
+  const exit = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
@@ -32,12 +32,20 @@ const HomePage = () => {
 
   return (
     <div>
+      <div>
+        <Link to={"/sign-in"} style={{ margin: "10px" }}>
+          Sign In
+        </Link>
+        <Link to={"/sign-up"} style={{ margin: "10px" }}>
+          Sign Up
+        </Link>
+      </div>
       Home Private Page
       <AddFile />
       <br />
       {error}
       <br />
-      <button onClick={submit}>Exit</button>
+      <button onClick={exit}>Exit</button>
     </div>
   );
 };

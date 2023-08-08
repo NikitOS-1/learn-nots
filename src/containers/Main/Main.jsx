@@ -13,9 +13,20 @@ import FilterPages from "../../components/Motion/Filter/FilterPages";
 import Menu from "../../components/Motion/AnimateSharedLayout/Menu";
 import LazyLoad from "../../components/LazyLoad/LazyLoad";
 import LocalStorage from "../../components/LocalStorage/LocalStorage";
+import { Route, Routes, Link } from "react-router-dom";
+import { RequireAuth } from "../../hooks/PrivatePages/RequireAuth";
+import HomePage from "../../pages/HomePage";
+import SignIn from "../../pages/SignIn";
+import SignUp from "../../pages/SignUp";
+
 const Main = () => {
   return (
     <main>
+      <Routes>
+        <Route path="/" element={<RequireAuth children={<HomePage />} />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
       {/* <AsyncFn /> */}
       {/* <Promise1 /> */}
       {/* <Closure /> */}
@@ -25,20 +36,16 @@ const Main = () => {
       {/* <DestrArr /> */}
       {/* <Spread /> */}
       {/* <ArrFunc /> */}
-      {/* <Routes> */}
-      {/* <Route path="/" element={<RequireAuth children={<HomePage />} />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} /> */}
-      {/* </Routes> */}
       {/* <ReactHooKForm /> */}
       {/* <Pagination /> */}
       {/* ------------Animation Frame Motion------------ */}
       {/* <Motion /> */}
       {/* <AnimatePresences /> */}
+      {/* _____ */}
       {/* <Menu /> */}
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
-      <LocalStorage />
+      {/* <LocalStorage /> */}
     </main>
   );
 };
