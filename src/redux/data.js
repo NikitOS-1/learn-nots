@@ -5,19 +5,25 @@ import { collection, getDocs } from "firebase/firestore";
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "books"));
-    const dataArray = querySnapshot.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+
+    const dataArray = [];
+
+    querySnapshot.forEach((doc) => {
+      dataArray.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
     return dataArray;
   } catch (error) {
-    throw new Error("some errors", error);
+    throw error;
   }
 });
 
 const initialState = {
   data: [],
   error: null,
+  status: null,
 };
 
 const dataSlice = createSlice({
@@ -25,13 +31,20 @@ const dataSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchData.fulfilled, (state, action) => {
-      state.data.push(action.payload);
-    });
+    builder
+      .addCase(fetchData.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchData.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(fetchData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
   },
 });
 export const {} = dataSlice.actions;
-
-export const selectData = (state) => state.data.data;
 
 export default dataSlice;

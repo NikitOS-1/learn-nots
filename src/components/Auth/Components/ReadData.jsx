@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ReadData = () => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  const dataRedux = useSelector(selectData);
+  const dataRedux = useSelector((data) => data.data.data);
 
   useEffect(() => {
     dispatch(fetchData());
