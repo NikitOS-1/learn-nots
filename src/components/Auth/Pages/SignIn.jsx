@@ -3,7 +3,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
@@ -30,10 +30,12 @@ const SignIn = () => {
       });
   };
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      navigate("/");
-    }
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/");
+      }
+    });
   });
 
   return (

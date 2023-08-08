@@ -1,4 +1,5 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
@@ -9,11 +10,12 @@ const HomePage = () => {
   const exit = () => {
     signOut(auth);
   };
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      navigate("/sign-in");
-    }
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/sign-in");
+      }
+    });
   });
 
   return (

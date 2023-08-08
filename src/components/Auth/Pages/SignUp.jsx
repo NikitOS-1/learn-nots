@@ -34,10 +34,12 @@ const SignUp = () => {
     }
   };
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      navigate("/");
-    }
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/");
+      }
+    });
   });
 
   return (
