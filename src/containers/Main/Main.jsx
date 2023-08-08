@@ -18,15 +18,16 @@ import { RequireAuth } from "../../hooks/PrivatePages/RequireAuth";
 import HomePage from "../../pages/HomePage";
 import SignIn from "../../pages/SignIn";
 import SignUp from "../../pages/SignUp";
+import Auth from "../../components/Auth/Auth";
 
 const Main = () => {
   return (
     <main>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<RequireAuth children={<HomePage />} />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
+      </Routes> */}
       {/* <AsyncFn /> */}
       {/* <Promise1 /> */}
       {/* <Closure /> */}
@@ -46,6 +47,7 @@ const Main = () => {
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
       {/* <LocalStorage /> */}
+      <Auth />
     </main>
   );
 };
