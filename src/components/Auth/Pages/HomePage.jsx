@@ -10,9 +10,10 @@ const HomePage = () => {
   const exit = () => {
     signOut(auth);
   };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (!user) {
         navigate("/sign-in");
       }
     });
