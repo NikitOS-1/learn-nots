@@ -15,6 +15,7 @@ const HomePage = () => {
       navigate("/sign-in");
     }
   });
+
   return (
     <div>
       <button onClick={exit}>Exit</button>
