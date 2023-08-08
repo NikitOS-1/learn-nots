@@ -5,23 +5,28 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
+  const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState("password");
+  const auth = getAuth();
 
   const showPassword = () => {
     setShowPass((prev) => (prev === "password" ? "text" : "password"));
   };
 
-  //   const auth = getAuth();
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // ..
-  //     });
+  const createAccount = () => {
+    if (pass1 === pass2) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage);
+        });
+    }
+  };
 
   return (
     <div>
@@ -53,7 +58,9 @@ const SignUp = () => {
           <button onClick={showPassword}>Show Password</button>
         </div>
       </div>
-      <button style={{ margin: "5px", width: "265px" }}>Create account</button>
+      <button style={{ margin: "5px", width: "265px" }} onClick={createAccount}>
+        Create account
+      </button>
     </div>
   );
 };
