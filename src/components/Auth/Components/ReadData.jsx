@@ -40,7 +40,7 @@ const ReadData = () => {
         How many books you read{" "}
         <span style={{ color: "green" }}>{++data.length - 1}</span>
       </h1>
-      {data.map((item) => (
+      {dataRedux.map((item) => (
         <div
           style={{
             display: "flex",
