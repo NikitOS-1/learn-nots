@@ -27,10 +27,11 @@
             padding: 10px;
             width: 50%;
             margin-bottom: 10px;
+            text-decoration: none;
+            color: inherit;
 
-            a {
-                text-decoration: none;
-                color: inherit;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.15);
             }
         }
     }

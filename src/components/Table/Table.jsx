@@ -12,15 +12,15 @@ const Table = () => {
       </header>
       <main className="main">
         <nav className="nav">
-          <div className="nav-item">
-            <Link to={"/"}>Dashboard</Link>
-          </div>
-          <div className="nav-item">
-            <Link to={"/story-teble"}>Story table</Link>
-          </div>
-          <div className="nav-item">
-            <Link to={"/settings"}>Settings</Link>
-          </div>
+          <Link to={"/"} className="nav-item">
+            Dashboard
+          </Link>
+          <Link to={"/story-teble"} className="nav-item">
+            Story table
+          </Link>
+          <Link to={"/settings"} className="nav-item">
+            Settings
+          </Link>
         </nav>
         <section className="section">
           <Routes>
