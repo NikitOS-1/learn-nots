@@ -34,16 +34,7 @@ const ReadData = () => {
         <span style={{ color: "green" }}>{data.length}</span>
       </h1>
       {data.map((item) => (
-        <Books
-          key={item.id}
-          id={item.id}
-          book={item.book}
-          author={item.author}
-          timeRead={item.timeRead}
-          dificult={item.dificult}
-          about={item.about}
-          deleteBook={deleteBook}
-        />
+        <Books key={item.id} item={item} deleteBook={deleteBook} />
       ))}
     </div>
   );

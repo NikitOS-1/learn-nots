@@ -7,8 +7,8 @@ import modalReducer from "./modalReducer";
 export const store = configureStore({
   reducer: {
     theme: themeReducer.reducer,
+    modal: modalReducer.reducer,
     auth: authReducer.reducer,
     data: data.reducer,
-    modal: modalReducer.reducer,
   },
 });

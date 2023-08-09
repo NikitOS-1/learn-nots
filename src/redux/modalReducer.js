@@ -15,14 +15,12 @@ const modalReducer = createSlice({
     closeModal: (state) => {
       state.isModalOpen = false;
     },
-    getSelectItem: (state, action) => {
-      state.isModalOpen = true;
-      state.selectID = action.payload;
-    },
   },
 });
 
-export const { openModal, closeModal, getSelectItem } = modalReducer.actions;
+export const { openModal, closeModal } = modalReducer.actions;
+
 export const isModalOpen = (state) => state.modal.isModalOpen;
 export const selectID = (state) => state.modal.selectID;
+
 export default modalReducer;
