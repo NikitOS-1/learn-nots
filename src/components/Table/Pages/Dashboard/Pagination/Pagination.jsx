@@ -1,6 +1,15 @@
-import "./Pagination.css";
+import { Pagination } from "@mui/material";
+import "./Paginations.css";
 
-const Pagination = () => {
-  return <div>Pagination</div>;
+const Paginations = ({ totalPages, page, handleChangePage }) => {
+  return (
+    <div className="pagination">
+      <Pagination
+        count={totalPages}
+        page={page}
+        onChange={(_, num) => handleChangePage(_, num)}
+      />
+    </div>
+  );
 };
-export default Pagination;
+export default Paginations;
