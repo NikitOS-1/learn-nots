@@ -38,7 +38,7 @@ const ReadData = () => {
           key={item.id}
           id={item.id}
           book={item.book}
-          autor={item.autor}
+          author={item.author}
           timeRead={item.timeRead}
           dificult={item.dificult}
           about={item.about}

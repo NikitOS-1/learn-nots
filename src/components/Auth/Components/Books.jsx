@@ -1,4 +1,4 @@
-const Books = ({ id, book, autor, timeRead, dificult, about, deleteBook }) => {
+const Books = ({ id, book, author, timeRead, dificult, about, deleteBook }) => {
   return (
     <div
       style={{
@@ -7,7 +7,7 @@ const Books = ({ id, book, autor, timeRead, dificult, about, deleteBook }) => {
         margin: "20px",
       }}>
       <div>Book: {book}</div>
-      <div>Author: {autor}</div>
+      <div>Author: {author}</div>
       <div>Time read: {timeRead}</div>
       <div>Dificult: {dificult}</div>
       <div>About: {about}</div>
