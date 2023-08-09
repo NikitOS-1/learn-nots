@@ -1,15 +1,11 @@
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
-import { RequireAuth } from "../../hooks/PrivatePages/RequireAuth";
-import { useEffect } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useSelector } from "react-redux";
+import { getAuth } from "firebase/auth";
 
 const Auth = () => {
   const auth = getAuth();
-  const navigate = useNavigate();
 
   return (
     <div>
