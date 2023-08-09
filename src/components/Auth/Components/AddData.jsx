@@ -10,6 +10,7 @@ const AddData = () => {
   const [timeRead, setTimeRead] = useState("");
   const [dificult, setDificult] = useState("");
   const [about, setAbout] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   const addBookInCollection = async () => {
@@ -22,19 +23,20 @@ const AddData = () => {
         about,
       });
       dispatch(fetchData());
-      console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      setError(e);
     }
     setBook("");
     setAuthor("");
     setTimeRead("");
     setDificult("");
     setAbout("");
+    setError("");
   };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "300px" }}>
+      {error}
       <input
         type="text"
         placeholder="book"
