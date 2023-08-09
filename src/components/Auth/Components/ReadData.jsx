@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useEffect, useState } from "react";
 import {
@@ -8,6 +8,7 @@ import {
   selectDataStatus,
 } from "../../../redux/data";
 import { useDispatch, useSelector } from "react-redux";
+import Books from "./Books";
 
 const ReadData = () => {
   const dispatch = useDispatch();
@@ -19,28 +20,30 @@ const ReadData = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
+  const deleteBook = async (id) => {
+    await deleteDoc(doc(db, "books", id));
+    dispatch(fetchData());
+  };
+
   return (
     <div>
       {error}
       {status}
       <h1>
         How many books you read{" "}
-        <span style={{ color: "green" }}>{data.length - 1}</span>
+        <span style={{ color: "green" }}>{data.length}</span>
       </h1>
       {data.map((item) => (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            margin: "20px",
-          }}
-          key={item.id}>
-          <div>Book: {item.book}</div>
-          <div>Author: {item.autor}</div>
-          <div>Time read: {item.timeRead}</div>
-          <div>Dificult: {item.dificult}</div>
-          <div>About: {item.about}</div>
-        </div>
+        <Books
+          key={item.id}
+          id={item.id}
+          book={item.book}
+          autor={item.autor}
+          timeRead={item.timeRead}
+          dificult={item.dificult}
+          about={item.about}
+          deleteBook={deleteBook}
+        />
       ))}
     </div>
   );
