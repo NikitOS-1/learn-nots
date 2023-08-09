@@ -4,7 +4,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { data } from "./data";
 import { useState } from "react";
 import Paginations from "./Pagination/Pagination";
-import Item from "./Item";
+import Item from "./Item/Item";
 
 const Dashboard = () => {
   const [page, setPage] = useState(1);

@@ -4,7 +4,7 @@ const Modal = ({ children, closeModal }) => {
   return (
     <div className="modal-container">
       <div className="modal">
-        <button className="close-button" onClick={() => closeModal}>
+        <button className="close-button" onClick={closeModal}>
           close
         </button>
         {children}
