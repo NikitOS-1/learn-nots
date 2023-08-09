@@ -14,7 +14,7 @@ const UsedModal = () => {
   //   setIsModalOpen(false);
   // };
   const dispatch = useDispatch();
-  const ModalOpen = useSelector(isModalOpen);
+  const modalOpen = useSelector(isModalOpen);
 
   return (
     <div>
@@ -23,7 +23,7 @@ const UsedModal = () => {
         style={{ border: "1px solid black", padding: "10px", width: "200px" }}>
         Click me and doing Magic
       </div>
-      {ModalOpen && (
+      {modalOpen && (
         <Modal>
           <h2>This is Modal Window</h2>
           <p>It great</p>

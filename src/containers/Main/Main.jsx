@@ -48,8 +48,8 @@ const Main = () => {
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
       {/* <LocalStorage /> */}
-      {/* <Auth /> //auth with CRUD firestore in firebase */}
-      <UsedModal />
+      <Auth /> {/*//auth with CRUD firestore in firebase*/}
+      {/* <UsedModal /> */}
     </main>
   );
 };
