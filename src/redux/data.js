@@ -47,4 +47,8 @@ const dataSlice = createSlice({
 });
 export const {} = dataSlice.actions;
 
+export const selectData = (state) => state.data.data;
+export const selectDataStatus = (state) => state.data.status;
+export const selectDataError = (state) => state.data.error;
+
 export default dataSlice;

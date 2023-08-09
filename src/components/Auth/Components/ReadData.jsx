@@ -1,46 +1,33 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useEffect, useState } from "react";
-import { fetchData, selectData, selectError } from "../../../redux/data";
+import {
+  fetchData,
+  selectData,
+  selectDataError,
+  selectDataStatus,
+} from "../../../redux/data";
 import { useDispatch, useSelector } from "react-redux";
 
 const ReadData = () => {
-  const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  const dataRedux = useSelector((data) => data.data.data);
+  const data = useSelector(selectData);
+  const status = useSelector(selectDataStatus);
+  const error = useSelector(selectDataError);
 
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  console.log(dataRedux);
-
-  // const fetchData = async () => {
-  //   try {
-  //     const querySnapshot = await getDocs(collection(db, "books"));
-  //     setData(
-  //       (prev) =>
-  //         (prev = querySnapshot.docs.map((doc) => ({
-  //           id: doc.id,
-  //           ...doc.data(),
-  //         })))
-  //     );
-  //   } catch (error) {
-  //     console.error("Error fetching data : ", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
   return (
     <div>
+      {error}
+      {status}
       <h1>
         How many books you read{" "}
-        <span style={{ color: "green" }}>{++data.length - 1}</span>
+        <span style={{ color: "green" }}>{data.length - 1}</span>
       </h1>
-      {dataRedux.map((item) => (
+      {data.map((item) => (
         <div
           style={{
             display: "flex",

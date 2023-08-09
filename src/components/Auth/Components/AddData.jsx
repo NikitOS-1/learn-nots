@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { useDispatch } from "react-redux";
+import { fetchData } from "../../../redux/data";
 
 const AddData = () => {
   const [book, setBook] = useState("");
@@ -8,6 +10,7 @@ const AddData = () => {
   const [timeRead, setTimeRead] = useState("");
   const [dificult, setDificult] = useState("");
   const [about, setAbout] = useState("");
+  const dispatch = useDispatch();
 
   const addBookInCollection = async () => {
     try {
@@ -18,6 +21,7 @@ const AddData = () => {
         dificult,
         about,
       });
+      dispatch(fetchData());
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
