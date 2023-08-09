@@ -9,6 +9,7 @@ import {
 } from "../../../redux/data";
 import { useDispatch, useSelector } from "react-redux";
 import Books from "./Books";
+import Modal from "../../Modal/Modal";
 
 const ReadData = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const ReadData = () => {
         <span style={{ color: "green" }}>{data.length}</span>
       </h1>
       {data.map((item) => (
-        <Books key={item.id} item={item} deleteBook={deleteBook} />
+        <Books key={item.id} data={item} deleteBook={deleteBook} />
       ))}
     </div>
   );

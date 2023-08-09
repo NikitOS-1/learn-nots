@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 import { openModal } from "../../../redux/modalReducer";
 
-const Books = (item) => {
+const Books = (data) => {
   const dispatch = useDispatch();
-  const { id, book, author, timeRead, dificult, about, deleteBook } = item;
-  console.log(item);
+  const { id, book, author, timeRead, dificult, about } = data.data;
+
   return (
     <div
       style={{
@@ -12,15 +12,15 @@ const Books = (item) => {
         flexDirection: "column",
         margin: "20px",
       }}>
-      <div>Book: {item.book}</div>
-      {/* <div>Author: {author}</div>
+      <div>Book: {book}</div>
+      <div>Author: {author}</div>
       <div>Time read: {timeRead}</div>
       <div>Dificult: {dificult}</div>
       <div>About: {about}</div>
-      <button style={{ width: "100px" }} onClick={() => dispatch(openModal())}>
+      <button style={{ width: "100px" }} onClick={() => dispatch(openModal)}>
         See more
       </button>
-      <button onClick={() => deleteBook(id)}>delete</button> */}
+      <button onClick={() => data.deleteBook(id)}>delete</button>
     </div>
   );
 };
