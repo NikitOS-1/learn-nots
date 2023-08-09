@@ -3,6 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { data } from "./data";
 import { useEffect, useState } from "react";
+import Pagination from "./Pagination/Pagination";
 
 const Dashboard = () => {
   const [item, setItem] = useState([]);
@@ -65,6 +66,7 @@ const Dashboard = () => {
           ))}
         </tbody>
       </table>
+      <Pagination />
     </div>
   );
 };

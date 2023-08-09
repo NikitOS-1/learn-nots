@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./Table.scss";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import StoryTable from "./Pages/StoryTable";
 import Settings from "./Pages/Settings";
 
