@@ -5,6 +5,7 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthGoogle from "../Components/AuthGoogle";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -62,6 +63,8 @@ const SignIn = () => {
       <button style={{ margin: "5px", width: "265px" }} onClick={signIn}>
         Sign In
       </button>
+
+      <AuthGoogle />
     </div>
   );
 };

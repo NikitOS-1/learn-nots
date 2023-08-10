@@ -49,9 +49,9 @@ const Main = () => {
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
       {/* <LocalStorage /> */}
-      {/* <Auth /> //auth with CRUD firestore in firebase */}
+      <Auth /> //auth with CRUD firestore in firebase
       {/* <UsedModal /> */}
-      <Table />
+      {/* <Table /> */}
     </main>
   );
 };
