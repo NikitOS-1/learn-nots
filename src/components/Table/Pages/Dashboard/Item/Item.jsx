@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Modal from "../Modal/Modal";
 
-const Item = (item) => {
+const Item = (item, openModal, setModalProfileLink, setModalMessage) => {
   const {
     id,
     scraping,
@@ -13,18 +12,8 @@ const Item = (item) => {
     postBuild,
     postStatus,
   } = item.item;
+
   const [selectValue, setSelectValue] = useState("yes");
-  const [isModalOpenProfileLink, setIsModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState(false);
-
-  const openModal = (fn) => {
-    fn(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalMessage(false);
-  };
 
   const handleSelectChange = (event) => {
     setSelectValue(event.target.value);
@@ -40,11 +29,11 @@ const Item = (item) => {
         <td>
           <div
             className="linkProfile"
-            onClick={() => openModal(setIsModalOpen)}>
+            onClick={() => item.openModal(item.setModalProfileLink)}>
             {linkProfile}
           </div>
         </td>
-        <td onClick={() => openModal(setModalMessage)}>
+        <td onClick={() => item.openModal(item.setModalMessage)}>
           <div className="linkProfile">{message}</div>
         </td>
         <td>
@@ -60,36 +49,6 @@ const Item = (item) => {
         <td>{postBuild}</td>
         <td>{postStatus}</td>
       </tr>
-      {isModalOpenProfileLink && (
-        <Modal closeModal={closeModal}>
-          <p>
-            <b>Clien ID:</b> {id}
-          </p>
-          <div
-            style={{
-              width: "400px",
-              height: "200px",
-              backgroundColor: "whitesmoke",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-            Some Picture
-          </div>
-        </Modal>
-      )}
-      {modalMessage && (
-        <Modal closeModal={closeModal}>
-          <textarea
-            name=""
-            id=""
-            cols="60"
-            rows="20"
-            value={
-              "Thank God for those extra years transplants give you some of the best extra years you’ve ever had in your life thank you to all of the donors so sorry for your loss"
-            }></textarea>
-        </Modal>
-      )}
     </>
   );
 };
