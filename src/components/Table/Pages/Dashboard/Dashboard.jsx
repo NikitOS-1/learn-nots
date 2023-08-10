@@ -1,18 +1,21 @@
 import "./Dashboard.css";
-import DeleteIcon from "@mui/icons-material/Delete";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { data } from "./data";
 import { useState } from "react";
 import Paginations from "./Pagination/Pagination";
 import Item from "./Item/Item";
-import Modal from "../../Components/Modal/Modal";
 import ModalProfileLink from "./ModalForItem/ModalProfileLink";
 import ModalMessage from "./ModalForItem/ModalMessage";
+import ModalUserIter from "./ModalForItem/ModalUserIter";
+import ModalPostBuild from "./ModalForItem/ModalPostBuild";
+import HeaderItem from "./Item/HeaderItem";
 
 const Dashboard = () => {
-  const [page, setPage] = useState(1);
   const [modalProfileLink, setModalProfileLink] = useState(false);
   const [modalMessage, setModalMessage] = useState(false);
+  const [modalUserIter, setModalUserIter] = useState(false);
+  const [modalPostBuild, setModalPostBuild] = useState(false);
+
+  const [page, setPage] = useState(1);
 
   const openModal = (fn) => {
     fn(true);
@@ -21,6 +24,8 @@ const Dashboard = () => {
   const closeModal = () => {
     setModalProfileLink(false);
     setModalMessage(false);
+    setModalUserIter(false);
+    setModalPostBuild(false);
   };
 
   const itemsPerPage = 6;
@@ -35,49 +40,7 @@ const Dashboard = () => {
     <div className="table-container">
       <table className="data-table">
         <thead>
-          <tr>
-            <th>
-              <input type="checkbox" name="" id="" />
-            </th>
-            <th>
-              <span>
-                Scraping Date <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-            <th>Link to the post</th>
-            <th>
-              <span>
-                Link to the Group
-                <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-            <th>Profile link</th>
-            <th>Message</th>
-            <th>
-              <span>
-                AI status
-                <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-            <th>
-              <span>
-                User iteraction
-                <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-            <th>
-              <span>
-                Post Builder
-                <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-            <th>
-              <span>
-                Post status
-                <FilterAltIcon style={{ marginLeft: "10px" }} />
-              </span>
-            </th>
-          </tr>
+          <HeaderItem />
         </thead>
         <tbody>
           {data
@@ -89,6 +52,8 @@ const Dashboard = () => {
                 openModal={openModal}
                 setModalProfileLink={setModalProfileLink}
                 setModalMessage={setModalMessage}
+                setModalUserIter={setModalUserIter}
+                setModalPostBuild={setModalPostBuild}
               />
             ))}
         </tbody>
@@ -100,6 +65,8 @@ const Dashboard = () => {
       />
       {modalProfileLink && <ModalProfileLink closeModal={closeModal} />}
       {modalMessage && <ModalMessage closeModal={closeModal} />}
+      {modalUserIter && <ModalUserIter closeModal={closeModal} />}
+      {modalPostBuild && <ModalPostBuild closeModal={closeModal} />}
     </div>
   );
 };

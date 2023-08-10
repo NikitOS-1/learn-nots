@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-const Item = (item, openModal, setModalProfileLink, setModalMessage) => {
+const Item = (
+  item,
+  openModal,
+  setModalProfileLink,
+  setModalMessage,
+  setModalUserIter,
+  setModalPostBuild
+) => {
   const {
     id,
     scraping,
@@ -45,8 +52,16 @@ const Item = (item, openModal, setModalProfileLink, setModalMessage) => {
             <option value="no">No</option>
           </select>
         </td>
-        <td>{userIter}</td>
-        <td>{postBuild}</td>
+        <td>
+          <div onClick={() => item.openModal(item.setModalUserIter)}>
+            {userIter && <div className="linkProfile">{userIter}</div>}
+          </div>
+        </td>
+        <td>
+          <div onClick={() => item.openModal(item.setModalPostBuild)}>
+            {postBuild && <div className="linkProfile">{postBuild}</div>}
+          </div>
+        </td>
         <td>{postStatus}</td>
       </tr>
     </>
