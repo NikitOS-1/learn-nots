@@ -21,7 +21,7 @@ export const data = [
     aiStatus: "yes",
     userIter: "",
     postBuild: "Post preview",
-    postStatus: "Posted",
+    postStatus: "On review",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const data = [
     aiStatus: "no",
     userIter: "Message sent",
     postBuild: "",
-    postStatus: "Posted",
+    postStatus: "Rejected",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const data = [
     aiStatus: "no",
     userIter: "send",
     postBuild: "Post preview",
-    postStatus: "Posted",
+    postStatus: "",
   },
   {
     id: 6,
@@ -93,7 +93,7 @@ export const data = [
     aiStatus: "no",
     userIter: "send",
     postBuild: "",
-    postStatus: "Posted",
+    postStatus: "",
   },
   {
     id: 9,
@@ -105,7 +105,7 @@ export const data = [
     aiStatus: "no",
     userIter: "",
     postBuild: "Post preview",
-    postStatus: "Posted",
+    postStatus: "Rejected",
   },
   {
     id: 10,
