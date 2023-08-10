@@ -26,31 +26,42 @@ const Dashboard = () => {
               <input type="checkbox" name="" id="" />
             </th>
             <th>
-              Scraping Date
-              <FilterAltIcon />
+              <span>
+                Scraping Date <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
             <th>Link to the post</th>
             <th>
-              Link to the Group
-              <FilterAltIcon />
+              <span>
+                Link to the Group
+                <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
             <th>Profile link</th>
             <th>Message</th>
             <th>
-              AI status
-              <FilterAltIcon />
+              <span>
+                AI status
+                <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
             <th>
-              User iteraction
-              <FilterAltIcon />
+              <span>
+                User iteraction
+                <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
             <th>
-              Post Builder
-              <FilterAltIcon />
+              <span>
+                Post Builder
+                <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
             <th>
-              Post status
-              <FilterAltIcon />
+              <span>
+                Post status
+                <FilterAltIcon style={{ marginLeft: "10px" }} />
+              </span>
             </th>
           </tr>
         </thead>

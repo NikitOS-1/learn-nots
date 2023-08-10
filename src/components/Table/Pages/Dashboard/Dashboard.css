@@ -12,6 +12,16 @@
     border-collapse: collapse;
 }
 
+thead {
+    font-size: 14px;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .data-table th,
 .data-table td {
     border: 1px solid #ddd;
@@ -30,4 +40,16 @@
 
 .data-table tr:hover {
     background-color: #dddddd53;
+}
+
+.linkProfile {
+    background-color: rgba(103, 185, 103, 0.625);
+    border: 1px solid rgba(0, 0, 0, 0.454);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.linkProfile:hover {
+    background-color: rgba(103, 185, 103, 0.825);
+    cursor: pointer;
 }

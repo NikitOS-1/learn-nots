@@ -14,14 +14,16 @@ const Item = (item) => {
     postStatus,
   } = item.item;
   const [selectValue, setSelectValue] = useState("yes");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpenProfileLink, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openModal = (fn) => {
+    fn(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setModalMessage(false);
   };
 
   const handleSelectChange = (event) => {
@@ -35,12 +37,21 @@ const Item = (item) => {
         <td>{scraping}</td>
         <td>{linkPost}</td>
         <td>{linkGroup}</td>
-        <td style={{ backgroundColor: "green" }} onClick={openModal}>
-          {linkProfile}
-        </td>
-        <td>{message}</td>
         <td>
-          <select value={selectValue} onChange={(e) => handleSelectChange(e)}>
+          <div
+            className="linkProfile"
+            onClick={() => openModal(setIsModalOpen)}>
+            {linkProfile}
+          </div>
+        </td>
+        <td onClick={() => openModal(setModalMessage)}>
+          <div className="linkProfile">{message}</div>
+        </td>
+        <td>
+          <select
+            value={selectValue}
+            onChange={(e) => handleSelectChange(e)}
+            style={{ cursor: "pointer" }}>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
@@ -49,9 +60,34 @@ const Item = (item) => {
         <td>{postBuild}</td>
         <td>{postStatus}</td>
       </tr>
-      {isModalOpen && (
+      {isModalOpenProfileLink && (
         <Modal closeModal={closeModal}>
-          <p>{id}</p>
+          <p>
+            <b>Clien ID:</b> {id}
+          </p>
+          <div
+            style={{
+              width: "400px",
+              height: "200px",
+              backgroundColor: "whitesmoke",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+            Some Picture
+          </div>
+        </Modal>
+      )}
+      {modalMessage && (
+        <Modal closeModal={closeModal}>
+          <textarea
+            name=""
+            id=""
+            cols="60"
+            rows="20"
+            value={
+              "Thank God for those extra years transplants give you some of the best extra years you’ve ever had in your life thank you to all of the donors so sorry for your loss"
+            }></textarea>
         </Modal>
       )}
     </>
