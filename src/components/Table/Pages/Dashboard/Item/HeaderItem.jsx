@@ -4,6 +4,7 @@ const HeaderItem = () => {
   const style = {
     marginLeft: "10px",
     width: "17px",
+    cursor: "pointer",
   };
   return (
     <>
