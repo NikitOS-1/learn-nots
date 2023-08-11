@@ -1,7 +1,7 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addUser, clearUser } from "../../../redux/authReducer";
 import AddData from "../Components/AddData";
 import ReadData from "../Components/ReadData";
@@ -34,6 +34,9 @@ const HomePage = () => {
   return (
     <div>
       <button onClick={() => signOut(auth)}>Exit</button>
+      <Link to={"payment"}>
+        <button>Payment</button>
+      </Link>
       <p>Hello {email}</p>
       <AddData />
       <ReadData />

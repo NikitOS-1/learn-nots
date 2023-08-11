@@ -3,10 +3,11 @@ import HomePage from "./Pages/HomePage";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import { getAuth } from "firebase/auth";
+import FormPayment from "../FormPayment/FormPayment";
 
 const Auth = () => {
   const auth = getAuth();
-
+  console.log(!auth.currentUser);
   return (
     <div>
       {!auth.currentUser && (
@@ -21,6 +22,7 @@ const Auth = () => {
       )}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/payment" element={<FormPayment />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
       </Routes>
