@@ -7,7 +7,7 @@ import FormPayment from "../FormPayment/FormPayment";
 
 const Auth = () => {
   const auth = getAuth();
-  console.log(!auth.currentUser);
+
   return (
     <div>
       {!auth.currentUser && (

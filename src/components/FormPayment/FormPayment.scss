@@ -1,0 +1,46 @@
+.form-payment {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0px;
+
+    .payment-info {
+        width: 100%;
+        display: flex;
+
+
+        .payment-method {
+            width: 300px;
+
+            h3 {
+                font-size: small;
+            }
+
+            .payment-type {
+                width: 300px;
+                height: 40px;
+            }
+
+            p {
+                font-style: italic;
+                font-size: small;
+            }
+
+            .check-payment-system {
+                margin-top: 50px;
+
+                img {
+                    width: 100px;
+                }
+            }
+        }
+
+        .billing-address {
+            width: 50%;
+        }
+    }
+
+    .btns {}
+
+}
