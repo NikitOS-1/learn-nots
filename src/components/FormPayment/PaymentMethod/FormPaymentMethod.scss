@@ -1,0 +1,67 @@
+.payment-method {
+    width: 300px;
+
+    p,
+    h3 {
+        font-size: small;
+    }
+
+    .payment-type {
+        .payment-select {
+            width: 300px;
+            height: 40px;
+        }
+
+        p {
+            font-style: italic;
+            font-size: small;
+        }
+    }
+
+    .check-payment-system {
+        margin-top: 50px;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    .accountNumber {
+
+
+        input {
+            width: 100%;
+            height: 20px;
+        }
+    }
+
+    .acc-cart-about {
+        display: flex;
+
+        p {
+            font-style: normal;
+        }
+
+        .expDate {
+            input {
+                width: 150px;
+            }
+        }
+
+        .svs {
+            margin-left: 10px;
+
+            input {
+                width: 70px;
+
+            }
+        }
+    }
+
+    .cartName {
+        input {
+            width: 100%;
+            height: 40px;
+        }
+    }
+}
