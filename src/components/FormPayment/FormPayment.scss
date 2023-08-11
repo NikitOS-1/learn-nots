@@ -34,13 +34,41 @@
                     width: 100px;
                 }
             }
-        }
 
-        .billing-address {
-            width: 50%;
+            .accountNumber {
+
+
+                input {
+                    width: 100%;
+                    height: 20px;
+                }
+            }
+
+            .acc-cart-about {
+                display: flex;
+
+                .expDate {
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                .svs {
+                    margin-left: 10px;
+
+                    input {
+                        width: 50px;
+
+                    }
+                }
+            }
+
         }
     }
 
-    .btns {}
-
+    .billing-address {
+        width: 50%;
+    }
 }
+
+.btns {}
