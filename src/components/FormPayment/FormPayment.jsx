@@ -24,14 +24,16 @@ const FormPayment = () => {
         <div className="payment-info">
           <div className="payment-method">
             <h3>Payment Method</h3>
-            <select className="payment-type">
-              <option value="PayPal Checkout">PayPal Checkout</option>
-              <option value="Stripe">Stripe</option>
-            </select>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed
-              ducimus, deserunt .
-            </p>
+            <div className="payment-type">
+              <select className="payment-select">
+                <option value="PayPal Checkout">PayPal Checkout</option>
+                <option value="Stripe">Stripe</option>
+              </select>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed
+                ducimus, deserunt .
+              </p>
+            </div>
             <div className="check-payment-system">
               <img src={visaMasterCard} alt="payment" />
             </div>
@@ -68,6 +70,7 @@ const FormPayment = () => {
                   errors={errors?.expDate}
                   errorMessage={errors?.expDate?.message}
                 />
+                <p>Expiration Date</p>
               </label>
               <label className="svs">
                 <input
@@ -75,7 +78,7 @@ const FormPayment = () => {
                   {...register("svs", {
                     required: "Enter you SVS",
                     minLength: {
-                      value: 2,
+                      value: 3,
                       message: "Invalid SVS code",
                     },
                   })}
@@ -84,8 +87,26 @@ const FormPayment = () => {
                   errors={errors?.svs}
                   errorMessage={errors?.svs?.message}
                 />
+                <p>Security Code</p>
               </label>
             </div>
+            <label className="cartName">
+              <input
+                type="text"
+                {...register("cartName", {
+                  required: "Enter your Name",
+                  minLength: {
+                    value: 5,
+                    message: "Invalid Name",
+                  },
+                })}
+              />
+              <Errors
+                errors={errors?.cartName}
+                errorMessage={errors?.cartName?.message}
+              />
+              <p>Cardholder Name</p>
+            </label>
           </div>
           <div className="billing-address"></div>
         </div>
