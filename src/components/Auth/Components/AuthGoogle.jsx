@@ -32,7 +32,7 @@ const AuthGoogle = () => {
   };
 
   return (
-    <div>
+    <div style={{ margin: "15px" }}>
       <GoogleButton onClick={handleGoogleSignIn} />
     </div>
   );
