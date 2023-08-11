@@ -39,8 +39,8 @@ const HomePage = () => {
       </Link>
       <p>Hello {email}</p>
       <AddData />
-      <ReadData />
       <Parallax />
+      <ReadData />
     </div>
   );
 };
