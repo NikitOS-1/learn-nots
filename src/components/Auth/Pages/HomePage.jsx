@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addUser, clearUser } from "../../../redux/authReducer";
 import AddData from "../Components/AddData";
 import ReadData from "../Components/ReadData";
+import Parallax from "../../Parallax/Parallax";
 
 const HomePage = () => {
   const { email, id, token } = useSelector((data) => data.auth);
@@ -36,6 +37,7 @@ const HomePage = () => {
       <p>Hello {email}</p>
       <AddData />
       <ReadData />
+      <Parallax />
     </div>
   );
 };

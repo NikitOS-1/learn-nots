@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import bgPicture from "../../assets/bg-picture.jpg";
+import "./Parallax.scss";
 
 const Parallax = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -18,7 +20,8 @@ const Parallax = () => {
     <div
       className="parallax"
       style={{
-        backgroundImage: `url('https://example.com/path-to-your-image.jpg')`,
+        backgroundImage:
+          "url('https://png.pngtree.com/thumb_back/fw800/background/20230415/pngtree-website-color-contrast-background-image_2343936.jpg')",
         backgroundSize: `${backgroundSize}%`,
       }}>
       Parallax
