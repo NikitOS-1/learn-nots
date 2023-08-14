@@ -17,8 +17,6 @@ const FormPayment = () => {
     reset();
   };
 
-  console.log(onSubmit({ a: b }));
-
   return (
     <div>
       <div>
