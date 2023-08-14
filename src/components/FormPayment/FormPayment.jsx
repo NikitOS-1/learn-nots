@@ -16,6 +16,9 @@ const FormPayment = () => {
   const onSubmit = (data) => {
     reset();
   };
+
+  console.log("lkf");
+
   return (
     <div>
       <div>
