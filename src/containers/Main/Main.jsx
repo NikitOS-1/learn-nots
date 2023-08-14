@@ -21,6 +21,7 @@ import SignUp from "../../pages/SignUp";
 import Auth from "../../components/Auth/Auth";
 import UsedModal from "../../components/Modal/UsedModal";
 import Table from "../../components/Table/Table";
+import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 
 const Main = () => {
   return (
@@ -49,9 +50,10 @@ const Main = () => {
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
       {/* <LocalStorage /> */}
-      <Auth /> //auth with CRUD firestore in firebase
+      {/* <Auth /> //auth with CRUD firestore in firebase */}
       {/* <UsedModal /> */}
       {/* <Table /> */}
+      <BurgerMenu />
     </main>
   );
 };
