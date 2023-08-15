@@ -1,4 +1,6 @@
-const MenuBurger = (isOpen) => {
+import "./MenuBurger.scss";
+
+const MenuBurger = ({ isOpen }) => {
   return (
     <div className={`burger-menu ${isOpen ? "open" : ""}`}>
       <ul>

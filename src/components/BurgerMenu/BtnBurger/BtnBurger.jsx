@@ -1,4 +1,6 @@
-const BtnBurger = (isOpen, handleMenuToggle) => {
+import "./BtnBurger.scss";
+
+const BtnBurger = ({ isOpen, handleMenuToggle }) => {
   return (
     <div
       className={`button-burger ${isOpen ? "open" : ""}`}
