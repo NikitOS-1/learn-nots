@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const BurgerMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <div className="app-container">
