@@ -1,15 +1,22 @@
 import { useState } from "react";
+import "./BurgerMenu.scss";
+import BtnBurger from "./BtnBurger/BtnBurger";
+import ContentBurger from "./ContentBurger/ContentBurger";
+import MenuBurger from "./MenuBurger/MenuBurger";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleMenuToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div>
       <div className="app-container">
-        <button className="button-burger">Open</button>
-        <div className="content">
-          <h1>Burger menu </h1>
-        </div>
+        <BtnBurger isOpen={isOpen} handleMenuToggle={handleMenuToggle} />
+        <ContentBurger />
+        <MenuBurger isOpen={isOpen} />
       </div>
     </div>
   );
