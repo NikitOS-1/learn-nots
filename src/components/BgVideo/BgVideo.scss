@@ -1,0 +1,19 @@
+.video-bg {
+    .video-bg__inner {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        z-index: -1;
+
+        .video-bg__video {
+            object-fit: cover;
+        }
+    }
+
+    .video-bg__content {
+        margin-left: 20px;
+    }
+}

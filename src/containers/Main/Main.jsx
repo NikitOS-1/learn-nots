@@ -22,6 +22,7 @@ import Auth from "../../components/Auth/Auth";
 import UsedModal from "../../components/Modal/UsedModal";
 import Table from "../../components/Table/Table";
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
+import BgVideo from "../../components/BgVideo/BgVideo";
 
 const Main = () => {
   return (
@@ -54,6 +55,7 @@ const Main = () => {
       {/* <UsedModal /> */}
       {/* <Table /> */}
       <BurgerMenu />
+      <BgVideo />
     </main>
   );
 };
