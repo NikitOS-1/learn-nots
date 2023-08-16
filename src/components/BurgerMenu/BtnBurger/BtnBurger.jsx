@@ -5,9 +5,9 @@ const BtnBurger = ({ isOpen, handleMenuToggle }) => {
     <div
       className={`button-burger ${isOpen ? "open" : ""}`}
       onClick={handleMenuToggle}>
-      <div className="btn-line"></div>
-      <div className="btn-line"></div>
-      <div className="btn-line"></div>
+      <div className="btn-line-one"></div>
+      <div className="btn-line-two"></div>
+      <div className="btn-line-three"></div>
     </div>
   );
 };
