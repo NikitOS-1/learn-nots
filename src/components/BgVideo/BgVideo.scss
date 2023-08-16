@@ -10,6 +10,8 @@
 
         .video-bg__video {
             object-fit: cover;
+            max-height: 1080px;
+            width: 100vw;
         }
     }
 
