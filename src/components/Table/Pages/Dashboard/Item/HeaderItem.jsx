@@ -11,7 +11,6 @@ const HeaderItem = () => {
       <tr>
         <th>
           <input type="checkbox" name="" id="" />
-          <input type="checkbox" name="" id="" />
         </th>
         <th>
           <span>
