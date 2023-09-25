@@ -16,7 +16,7 @@ const Auth = () => {
             Sign In
           </Link>
           <Link to="/sign-up" style={{ margin: "5px" }}>
-            Sign Up Sign Up
+            Sign Up
           </Link>
         </div>
       )}
