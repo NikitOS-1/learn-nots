@@ -47,13 +47,13 @@ const Main = () => {
       {/* <Motion /> */}
       {/* <AnimatePresences /> */}
       {/* _____ */}
-      <Menu />
+      {/* <Menu /> */}
       {/* <FilterPages /> */}
       {/* <LazyLoad /> */}
       {/* <LocalStorage /> */}
       {/* <Auth /> //auth with CRUD firestore in firebase */}
       {/* <UsedModal /> */}
-      {/* <Table /> */}
+      <Table />
       {/* <BurgerMenu /> */}
       {/* <BgVideo /> */}
     </main>
