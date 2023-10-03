@@ -53,7 +53,7 @@ const Main = () => {
       {/* <LocalStorage /> */}
       {/* <Auth /> //auth with CRUD firestore in firebase */}
       {/* <UsedModal /> */}
-      <Table />
+      {/* <Table /> */}
       {/* <BurgerMenu /> */}
       {/* <BgVideo /> */}
     </main>
