@@ -23,6 +23,7 @@ import UsedModal from "../../components/Modal/UsedModal";
 import Table from "../../components/Table/Table";
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import BgVideo from "../../components/BgVideo/BgVideo";
+import Calc from "../../components/Calc/Calc";
 
 const Main = () => {
   return (
@@ -56,6 +57,7 @@ const Main = () => {
       {/* <Table /> */}
       {/* <BurgerMenu /> */}
       {/* <BgVideo /> */}
+      <Calc />
     </main>
   );
 };
