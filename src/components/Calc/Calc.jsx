@@ -2,6 +2,8 @@ import { useState } from "react";
 
 const Calc = () => {
   const [res, setRes] = useState(0);
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
 
   const calc = (e) => {
     let enter = e.target.value;
@@ -43,9 +45,15 @@ const Calc = () => {
         </button>
       </div>
       <div className="btn-calc">
-        <button value="+">+</button>
-        <button value="-">-</button>
-        <button value="=">=</button>
+        <button value="+" onClick={calc}>
+          +
+        </button>
+        <button value="-" onClick={calc}>
+          -
+        </button>
+        <button value="=" onClick={calc}>
+          =
+        </button>
       </div>
     </div>
   );
