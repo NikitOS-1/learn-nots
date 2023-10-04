@@ -4,7 +4,8 @@ const Calc = () => {
   const [res, setRes] = useState(0);
 
   const calc = (e) => {
-    setRes(e.target.value);
+    let enter = e.target.value;
+    setRes(enter);
   };
   return (
     <div>
@@ -43,6 +44,8 @@ const Calc = () => {
       </div>
       <div className="btn-calc">
         <button value="+">+</button>
+        <button value="-">-</button>
+        <button value="=">=</button>
       </div>
     </div>
   );
