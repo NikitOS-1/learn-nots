@@ -14,7 +14,6 @@ const Calc = () => {
       <div>{res}</div>
       <div className="btn-number">
         <button value="1" onClick={calc}>
-        <button value="1" onClick={calc}>
           1
         </button>
         <button value="2" onClick={calc}>
