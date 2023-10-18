@@ -12,6 +12,7 @@ const Calc = () => {
   return (
     <div>
       <div>{res}</div>
+      <div>{res}</div>
       <div className="btn-number">
         <button value="1" onClick={calc}>
           1
