@@ -57,7 +57,6 @@ const Main = () => {
       {/* <Table /> */}
       {/* <BurgerMenu /> */}
       {/* <BgVideo /> */}
-      <Calc />
     </main>
   );
 };
