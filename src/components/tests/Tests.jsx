@@ -4,5 +4,6 @@ const Tests = () => {
     return allArray.sort((a, b) => a - b);
   }
   return solve([1, 2, 3], [48, 0, 123], [34, 32, 5]);
+  return solve([1, 2, 3], [48, 0, 123], [34, 32, 5]);
 };
 export default Tests;
