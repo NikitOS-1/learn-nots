@@ -30,30 +30,17 @@ const alphabet = [
 ];
 
 const Tests = () => {
-  const [word, setWord] = useState("...");
-  const [letter, setLetter] = useState(alphabet);
+  const [letters, setLetters] = useState(alphabet);
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+  const [collectedWord, setCollectedWord] = useState("");
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLetterIndex((prevIndex) => {
-        if (prevIndex === letter.length - 2) {
-          clearInterval(interval);
-        }
-
-        return (prevIndex + 1) % letter.length;
-      });
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, [letter]);
+  useEffect(() => {}, []);
 
   return (
-    <>
-      <button>Click here</button>
-      <div>{letter[currentLetterIndex]}</div>
-      <div>{word}</div>
-    </>
+    <div>
+      <div>{letters[currentLetterIndex]}</div>
+      <div>{collectedWord}</div>
+    </div>
   );
 };
 export default Tests;
