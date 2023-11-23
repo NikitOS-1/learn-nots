@@ -1,4 +1,4 @@
-// Types Data in JS
+// Types Data in JS-------------------------------------
 // 1.null
 // 2.undefined
 // 3.number
@@ -16,7 +16,7 @@ let myNull: null = null;
 let myUndefined: undefined = undefined;
 let x: any = 30;
 
-// -----------------Function--------------------
+// -----------------Function----------------------------
 //function return type
 function foo(): void {
   console.log("something");
@@ -51,4 +51,29 @@ function convert(value: string | number): string | number {
   } else {
     return value.toString();
   }
+}
+
+// -----------------Interfaces----------------------------
+
+//Basic interface
+interface Person {
+  name: string;
+  age: number;
+}
+
+//interface with optional property
+interface User {
+  id: number;
+  email?: string;
+}
+
+//interface with readonly property
+interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+
+//interface with function property
+interface Calc {
+  add(a: number, b: number): number;
 }
