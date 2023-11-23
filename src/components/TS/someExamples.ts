@@ -77,3 +77,10 @@ interface Point {
 interface Calc {
   add(a: number, b: number): number;
 }
+
+// -----------------Types----------------------------
+
+type Windows = {
+  x: number;
+  y: number;
+};
