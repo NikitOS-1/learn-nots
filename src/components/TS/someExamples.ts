@@ -8,6 +8,8 @@
 // 7.BigInt
 // 8.Symbol
 
+import { get } from "firebase/database";
+
 // ------------Basic types into variable----------------
 let age: number = 30;
 let names: string = "Nikita";
@@ -84,3 +86,16 @@ type Windows = {
   x: number;
   y: number;
 };
+
+// -----------------Generics----------------------------
+
+class ArrayOfAnything<T> {
+  constructor(public collection: T[]) {}
+
+  get(index: number): T {
+    return this.collection[index];
+  }
+}
+
+new ArrayOfAnything<string>(["1", "2", "3"]);
+new ArrayOfAnything<number>([1, 2, 3]);
