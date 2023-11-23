@@ -36,3 +36,8 @@ function great(name?: string): void {
 function repeat(text: string, times: number = 3): string {
   return text.repeat(times);
 }
+
+//function with rest parameter
+function sum(...values: number[]): number {
+  return values.reduce((acc, value) => acc + value, 0);
+}
