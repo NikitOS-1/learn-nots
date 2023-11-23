@@ -88,7 +88,7 @@ type Windows = {
 };
 
 // -----------------Generics----------------------------
-
+//array generic
 class ArrayOfAnything<T> {
   constructor(public collection: T[]) {}
 
