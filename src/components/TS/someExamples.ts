@@ -41,3 +41,14 @@ function repeat(text: string, times: number = 3): string {
 function sum(...values: number[]): number {
   return values.reduce((acc, value) => acc + value, 0);
 }
+
+//function with overloaded signatures
+function convert(value: string): number;
+function convert(value: number): string;
+function convert(value: string | number): string | number {
+  if (typeof value === "string") {
+    return parseInt(value, 10);
+  } else {
+    return value.toString();
+  }
+}
