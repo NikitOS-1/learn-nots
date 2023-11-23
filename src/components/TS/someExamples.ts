@@ -8,7 +8,7 @@
 // 7.BigInt
 // 8.Symbol
 
-// ------------basic types into variable----------------
+// ------------Basic types into variable----------------
 let age: number = 30;
 let names: string = "Nikita";
 let isDone: boolean = false;
@@ -25,4 +25,14 @@ function foo(): void {
 //function with typed parameters and return type
 function add(x: number, y: number): number {
   return x + y;
+}
+
+//function with optional parameter
+function great(name?: string): void {
+  console.log(`Hello ${name ?? "world"}`);
+}
+
+//function with dafault parameter
+function repeat(text: string, times: number = 3): string {
+  return text.repeat(times);
 }
