@@ -7,6 +7,7 @@
 // 6.object
 // 7.BigInt
 // 8.Symbol
+// 8.Symbol
 
 import { get } from "firebase/database";
 
