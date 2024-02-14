@@ -16,7 +16,7 @@ let names: string = "Nikita";
 let isDone: boolean = false;
 let myNull: null = null;
 let myUndefined: undefined = undefined;
-let x: any = 300;
+let x: any = 30;
 
 // -----------------Function----------------------------
 //function return type
