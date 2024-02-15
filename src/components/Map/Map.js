@@ -1,0 +1,1 @@
+let myMap = new Map();
