@@ -1,4 +1,5 @@
 // Types Data in JS-------------------------------------
+
 // 1.null
 // 2.undefined
 // 3.number
@@ -7,8 +8,6 @@
 // 6.object
 // 7.BigInt
 // 8.Symbol
-
-import { get } from "firebase/database";
 
 // ------------Basic types into variable----------------
 let age: number = 30;
