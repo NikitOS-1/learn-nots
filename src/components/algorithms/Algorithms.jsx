@@ -29,9 +29,8 @@ const Algorithms = () => {
   // -------------recurse--------------
   // let arr = [[2, 2, 3, [1, 2, [1]]], 1, [12, [1, 3]]];
 
-  // let newArray = [];
-
   // const flat = (array) => {
+  // let newArray = [];
   //   array.forEach((el) => {
   //     if (Array.isArray(el)) {
   //       flat(el);
