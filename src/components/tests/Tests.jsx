@@ -14,7 +14,6 @@ const Tests = () => {
   }
 
   return <div>Test</div>
-  return <div>Test</div>
 }
 
 export default Tests
