@@ -23,4 +23,4 @@ const filterArray = (arr) => {
   return newArray
 }
 
-filterArr()
+filterArr(arr)
