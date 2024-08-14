@@ -1,4 +1,6 @@
 const Footer = () => {
-  return <footer></footer>;
+  return <footer>
+    2022-2024
+  </footer>;
 };
 export default Footer;
