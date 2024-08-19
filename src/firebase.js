@@ -12,7 +12,7 @@ const firebaseConfig = {
   databaseURL: "https://auth-learning-d3909-default-rtdb.firebaseio.com/",
 };
 
-// Initialize Firebase
+// Initialize Fireb
 
 export const app = initializeApp(firebaseConfig);
 
