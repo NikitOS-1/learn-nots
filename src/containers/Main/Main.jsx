@@ -36,7 +36,7 @@ const Main = () => {
       {/* <AsyncFn /> */}
       {/* <Promise1 /> */}
       <Closure />
-       <Recurse />
+       {/*<Recurse />*/}
       {/* <FindToArr /> */}
       {/* <DestrObj /> */}
       {/* <DestrArr /> */}
