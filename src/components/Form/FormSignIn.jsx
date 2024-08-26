@@ -31,6 +31,7 @@ const FormSignIn = () => {
   return (
       <form typeof="submit">
           <h1>SignIn</h1>
+          <h1>SignIn</h1>
           <input
               type="text"
               value={email}
