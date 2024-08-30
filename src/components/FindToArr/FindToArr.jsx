@@ -6,7 +6,7 @@ const FindToArr = () => {
       id: 1,
       title: "Item1",
       price: 100,
-      // category: "product",
+      category: "product",
     },
     {
       id: 2,
